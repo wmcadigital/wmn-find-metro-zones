@@ -19,6 +19,7 @@ $palettes: (
   disable: #676869,
   plannedDisruption: #ffdd00,
   background: #f3f2f1,
+  borderCol: #87898c,
 );
 
 $white: #ffffff;
@@ -42,6 +43,7 @@ $size-sm: 0.75rem; // 12px
 $size-md: 1rem; // 16px
 $size-lg: 2rem; // 32px
 $size-xl: 3rem; // 48px
+$size-2xl: 4rem; // 64px
 
 // Breakpoints
 $breakpoint-xs: 0; // Extra small screen / phone

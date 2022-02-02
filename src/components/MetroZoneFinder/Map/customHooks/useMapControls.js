@@ -3,7 +3,7 @@ import { useContext, useEffect, useCallback } from 'react';
 // Import contexts
 import { MapContext } from 'globalState';
 import s from '../Map.module.scss';
-import railData from '../../RailData.json';
+import metroData from '../../MetroData.json';
 
 const useMapControls = () => {
   const [mapState, mapDispatch] = useContext(MapContext);
@@ -31,6 +31,7 @@ const useMapControls = () => {
     if (mapRef?.current && mapState.mapView) {
       const fitZoneToViewer = (zone, offset) => {
         const svg = mapRef.current.ViewerDOM; // Find svg node
+        console.log(svg);
         const zoneNode = svg.querySelector(`#Zone_${zone}`); // Find relevant zone node
         const transitionElement = svg.childNodes[1]; // Get the element of the map which is transformed (to add a transition)
         // Add a transition to smooth zoom effect
@@ -74,7 +75,7 @@ const useMapControls = () => {
         if (mounted) {
           if (zoneName) {
             const zoneToHighlight = zoneName.replace('zone', '');
-            if (zoneToHighlight && zoneToHighlight <= '5') {
+            if (zoneToHighlight && zoneToHighlight <= '4') {
               fitZoneToViewer(zoneToHighlight, 50);
             } else {
               fitZoneToViewer(7, 0);
@@ -102,7 +103,7 @@ const useMapControls = () => {
     const { full, partial, parking } = mapState.accessVisibility;
     if (mapRef?.current) {
       const svg = mapRef.current.ViewerDOM; // Find svg node
-      railData.railStationAccess.forEach((station) => {
+      metroData.metroStationAccess.forEach((station) => {
         const group =
           svg.querySelector(`[data-name="${station.stationName}"]`) ||
           svg.querySelector(`#${station.stationName.replace(' ', '_').replace(/[^\w-]+/g, '')}`);
@@ -142,12 +143,12 @@ const useMapControls = () => {
       }
     }
     // Find related zone in svg map
-    const inThisZone = selectedStations.filter((item) => item.railZone === station.railZone);
+    const inThisZone = selectedStations.filter((item) => item.metroZone === station.metroZone);
     // If this is the only one of thiszone in selected stations then remove the highlight class from svg map
     if (inThisZone.length < 2) {
       mapDispatch({
         type: 'UPDATE_ZONE_HIGHLIGHT',
-        payload: { [`zone${station.railZone}`]: false },
+        payload: { [`zone${station.metroZone}`]: false },
       });
     }
   };

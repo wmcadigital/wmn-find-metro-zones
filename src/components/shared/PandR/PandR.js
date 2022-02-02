@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import { MapContext } from 'globalState';
 
 import Icon from '../Icon/Icon';
@@ -10,12 +10,13 @@ import Icon from '../Icon/Icon';
 
 import s from './PandR.module.scss';
 
-const PandR = () => {
+const PandR = ({ mapView }) => {
   // const [mapState, mapDispatch] = useContext(MapContext);
   // const [showKey, setShowKey] = useState(!mapView);
   return (
-    <div className={s.pandRWrapper}>
-      <div className={` ${s.content}`}>
+    <div className={mapView ? s.pandRWrapper : s.listViewWrapper}>
+      {!mapView && <h3>Key</h3>}
+      <div className={`${s.content}`}>
         <Icon iconName="modes-bg-p-r" color="primary" size={32} title="parkride" />
         <span className="wmnds-p-t-xs wmnds-p-l-sm">
           Tram stops with
@@ -34,12 +35,12 @@ const PandR = () => {
   );
 };
 
-// AccessibilityKey.propTypes = {
-//   mapView: PropTypes.bool,
-// };
+PandR.propTypes = {
+  mapView: PropTypes.bool,
+};
 
-// AccessibilityKey.defaultProps = {
-//   mapView: false,
-// };
+PandR.defaultProps = {
+  mapView: false,
+};
 
 export default PandR;

@@ -14,7 +14,7 @@ const Result = () => {
   // Get selected stations that have an id
   const stations = selectedStations.filter((item) => item.id !== null);
 
-  const zones = [...stations.map((stn) => stn.railZone)];
+  const zones = [...stations.map((stn) => stn.metroZone)];
   const minZone = Math.min(...zones);
   const maxZone = Math.max(...zones);
 
@@ -46,7 +46,7 @@ const Result = () => {
       {stations.length > 0 && (
         <>
           <div className="wmnds-m-b-lg">
-            {stations.map(({ id, stationName, railZone }, i) => (
+            {stations.map(({ id, stationName, metroZone, metroZoneSecond }, i) => (
               <p
                 key={id}
                 className={
@@ -54,17 +54,20 @@ const Result = () => {
                 }
               >
                 {stationName} is{' '}
-                {railZone < 6 && (
+                {metroZone < 5 && (
                   <>
-                    in <strong>Zone {railZone}</strong>
+                    in{' '}
+                    <strong>
+                      Zone {metroZone} & {metroZoneSecond && metroZoneSecond}
+                    </strong>
                   </>
                 )}
-                {railZone === 6 && (
+                {/* {metroZone === 6 && (
                   <>
                     in <strong>nTrain Zone 5</strong>
                   </>
-                )}
-                {railZone === 7 && <strong>Out of County</strong>}.
+                )} */}
+                {/* {metroZone === 7 && <strong>Out of County</strong>}. */}
               </p>
             ))}
           </div>
@@ -72,12 +75,12 @@ const Result = () => {
             <div className={`wmnds-m-b-lg wmnds-p-md ${s.bgSecondary}`}>
               <p className={minZone >= 2 ? '' : 'wmnds-m-b-none'}>
                 To travel between these stations, you&rsquo;ll need a{' '}
-                <strong>zone 1 to {maxZone > 5 ? 5 : maxZone}</strong> ticket.
+                <strong>zone 1 to {maxZone > 4 ? 4 : maxZone}</strong> ticket.
               </p>
               {minZone >= 2 && (
                 <p className="wmnds-m-b-none">
                   If you do not need to travel through Birmingham City Centre, you can get a{' '}
-                  <strong>zone 2 to 5</strong> ticket.
+                  <strong>zone 2 to 4</strong> ticket.
                 </p>
               )}
             </div>

@@ -2,7 +2,7 @@ import { useEffect, useContext, useState, useRef, useCallback } from 'react';
 // Import contexts
 import { AutoCompleteContext, MapContext } from 'globalState';
 // Import json data
-import railData from '../../../MetroZoneFinder/RailData.json';
+import metroData from '../../../MetroZoneFinder/MetroData.json';
 
 const useAutoCompleteAPI = (queryId) => {
   // State variables
@@ -25,12 +25,12 @@ const useAutoCompleteAPI = (queryId) => {
       setResults(response || []);
 
       if (selectedService.id && response.length) {
-        // Grab info matching rail data from json file
-        const result = railData.railStationAccess.filter(
+        // Grab info matching metro data from json file
+        const result = metroData.metroStationAccess.filter(
           (service) => service.crsCode === selectedService.id
         )[0];
-        if (!result.railZone) {
-          result.railZone = 7; // if there is no zone assign '7' (Out of county)
+        if (!result.metroZone) {
+          result.metroZone = 7; // if there is no zone assign '7' (Out of county)
         }
         // Set data to add to context state
         payload = {
@@ -49,7 +49,7 @@ const useAutoCompleteAPI = (queryId) => {
         // Update the map state to highlight zones which have selected stations in them
         mapDispatch({
           type: 'UPDATE_ZONE_HIGHLIGHT',
-          payload: { [`zone${payload.railZone}`]: true },
+          payload: { [`zone${payload.metroZone}`]: true },
         });
       }
 
@@ -70,10 +70,10 @@ const useAutoCompleteAPI = (queryId) => {
     mounted.current = true; // Set mounted to true (used later to make sure we don't do events as component is unmounting)
     setLoading(true);
     const response = query
-      ? railData.railStationAccess.filter((station) => {
+      ? metroData.metroStationAccess.filter((station) => {
           return station.stationName.toLowerCase().includes(query.trim().toLowerCase());
         })
-      : railData.railStationAccess;
+      : metroData.metroStationAccess;
     handleAutoCompleteApiResponse(response);
   }, [handleAutoCompleteApiResponse, query]);
 

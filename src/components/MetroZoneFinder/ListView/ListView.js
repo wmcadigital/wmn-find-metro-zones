@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import PandR from 'components/shared/PandR/PandR';
 import Button from '../../shared/Button/Button';
 import AccessIcon from '../../shared/Icon/AccessIcon';
 import Icon from '../../shared/Icon/Icon';
-import AccessibilityKey from '../../shared/AccessibilityKey/AccessibilityKey';
+// import AccessibilityKey from '../../shared/AccessibilityKey/AccessibilityKey';
 import Accordion from '../../shared/Accordion/Accordion';
 import AutoComplete from '../../shared/AutoComplete/AutoComplete';
 import s from './ListView.module.scss';
 
-import railData from '../RailData.json';
+// import railData from '../RailData.json';
+import metroData from '../MetroData.json';
 
 const ListView = () => {
   const [accordions, setAccordions] = useState([
@@ -89,9 +91,9 @@ const ListView = () => {
               newState[i].open = !accordions[i].open;
               setAccordions([...newState]);
             };
-            // Filter stations with railZones matching the current iteration (i)
-            const zoneStations = railData.railStationAccess.filter(
-              (station) => station.railZone === i + 1
+            // Filter stations with metroZones matching the current iteration (i)
+            const zoneStations = metroData.metroStationAccess.filter(
+              (station) => station.metroZone === i + 1
             );
             return (
               <div key={accordionId} className="wmnds-p-b-md">
@@ -146,7 +148,7 @@ const ListView = () => {
         </div>
         <div className={`wmnds-col-1-1 wmnds-col-md-1-3 ${s.keyCol}`}>
           <div className="wmnds-content-card">
-            <AccessibilityKey />
+            <PandR />
           </div>
         </div>
       </div>

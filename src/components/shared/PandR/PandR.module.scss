@@ -16,3 +16,14 @@
   display: flex;
   margin: $size-md;
 }
+
+.listViewWrapper {
+  // position: relative;
+  width: 288px;
+  height: 132px;
+
+  h3 {
+    // margin: $size-md;
+    color: get-color(primary);
+  }
+}

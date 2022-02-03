@@ -13,7 +13,7 @@ $duration: 0.75s;
 
   & + path {
     fill: $white;
-    stroke: $white;
+    // stroke: $white;
     stroke-width: 0.25;
   }
 
@@ -23,9 +23,14 @@ $duration: 0.75s;
   }
 }
 
-// .mapView {
-//   position: relative;
+// .selectedStation {
+//   color: $white;
+//   background: get-color(primary);
 // }
+
+.mapView {
+  position: relative;
+}
 
 .mapView {
   max-height: 70vh;
@@ -57,9 +62,9 @@ $duration: 0.75s;
 }
 
 .zoneSelected {
-  path:first-child {
-    fill: get-color(secondary, 70);
-  }
+  // path:first-child {
+  fill: get-color(secondary, 70);
+  // }
 }
 
 .hideStations {

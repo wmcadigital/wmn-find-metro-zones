@@ -28,8 +28,8 @@ const initialValue = {
   startX: null,
   startY: null,
   version: 3,
-  viewerHeight: 279,
-  viewerWidth: 749,
+  viewerHeight: 432,
+  viewerWidth: 843,
 };
 const MetroZoneMap = () => {
   const { mapState, mapDispatch } = useMapMethods();
@@ -74,7 +74,7 @@ const MetroZoneMap = () => {
         background="#fff"
         onChangeValue={setValues}
       >
-        <svg viewBox="0 0 749 279">
+        <svg viewBox="0 0 843 432">
           <defs>
             <style>
               {

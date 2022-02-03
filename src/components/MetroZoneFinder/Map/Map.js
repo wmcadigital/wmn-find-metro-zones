@@ -20,8 +20,8 @@ const Map = () => {
       <div className={s.mapContainer} ref={mapContainer}>
         <MetroZoneMap />
         {/* <AccessibilityKey mapView /> */}
-        <PandR mapView />
       </div>
+      <PandR mapView />
     </div>
   );
 };

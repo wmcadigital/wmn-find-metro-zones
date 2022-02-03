@@ -58,7 +58,7 @@ const Result = () => {
                   <>
                     in{' '}
                     <strong>
-                      Zone {metroZone} & {metroZoneSecond && metroZoneSecond}
+                      Zone {metroZone} {metroZoneSecond && ` & ${metroZoneSecond}`}
                     </strong>
                   </>
                 )}

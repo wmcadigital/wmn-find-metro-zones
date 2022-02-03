@@ -13,8 +13,8 @@ export const MapContextProvider = (props) => {
     mapContainer: null,
     mapView: getSearchParam('mapView') !== 'false',
     mapSize: {
-      width: 749,
-      height: 279,
+      width: 843,
+      height: 432,
     },
     highlightedZones: {
       zone1: false,

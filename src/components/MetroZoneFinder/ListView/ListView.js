@@ -37,7 +37,7 @@ const ListView = () => {
     <div className="wmnds-container">
       <div className="wmnds-grid wmnds-grid--spacing-md-2-lg wmnds-p-b-md">
         <div className="wmnds-col-1-1 wmnds-col-md-2-3">
-          <div className={`bg-white wmnds-p-md ${s.trayComponents}`}>
+          <div className={`wmnds-bg-white wmnds-p-md ${s.trayComponents}`}>
             <AutoComplete />
           </div>
         </div>
@@ -107,20 +107,22 @@ const ListView = () => {
                   <ul>
                     {zoneStations.map((station) => (
                       <li key={station.crsCode} className={s.accordionListItem}>
-                        {station.stationName}
+                        {station.metroZoneSecond
+                          ? `${station.stationName} (also in Zone ${station.metroZoneSecond})`
+                          : station.stationName}
                         {station.stepFreeAccess && (
                           <>
                             {station.stepFreeAccess === 'full' ? (
                               <>
                                 {' '}
                                 <span className={s.srOnly}>which has full step free access</span>
-                                <AccessIcon className="wmnds-m-l-xsm" />
+                                {/* <AccessIcon className="wmnds-m-l-xsm" /> */}
                               </>
                             ) : (
                               <>
                                 {' '}
                                 <span className={s.srOnly}>which has partial step free access</span>
-                                <AccessIcon type="part" className="wmnds-m-l-xsm" />
+                                <AccessIcon type="part" className="wmnds-m-l-sm" />
                               </>
                             )}
                           </>
@@ -130,11 +132,12 @@ const ListView = () => {
                             <span className={s.srOnly}>
                               {station.stepFreeAccess ? 'and parking' : 'which has parking'}
                             </span>
-
                             <Icon
-                              iconName="general-parking"
+                              iconName="modes-bg-p-r"
+                              color="primary"
+                              size={24}
+                              title="parkride"
                               className="wmnds-m-l-xsm"
-                              color="cta"
                             />
                           </>
                         )}

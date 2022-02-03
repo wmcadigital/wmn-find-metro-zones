@@ -15,7 +15,7 @@ const PandR = ({ mapView }) => {
   // const [showKey, setShowKey] = useState(!mapView);
   return (
     <div className={mapView ? s.pandRWrapper : s.listViewWrapper}>
-      {!mapView && <h3>Key</h3>}
+      {!mapView && <h3 className="wmnds-p-md">Key</h3>}
       <div className={`${s.content}`}>
         <Icon iconName="modes-bg-p-r" color="primary" size={32} title="parkride" />
         <span className="wmnds-p-t-xs wmnds-p-l-sm">

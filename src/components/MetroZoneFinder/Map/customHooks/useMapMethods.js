@@ -46,7 +46,7 @@ const useMapMethods = () => {
   useLayoutEffect(() => {
     // Function for hightlighting stations on the svg map
     const drawMapHighlights = (station) => {
-      const svg = mapRef.current.ViewerDOM;
+      const svg = mapRef?.current.ViewerDOM;
       // Find station element by name or id
       const group =
         svg.querySelector(`[data-name="${station.stationName}"]`) ||
@@ -98,6 +98,7 @@ const useMapMethods = () => {
       // Loop through selected stations and highlight them on the map
       autoCompleteState.selectedStations.forEach((station) => {
         if (station.stationName) {
+          console.log(station);
           drawMapHighlights(station);
         }
       });

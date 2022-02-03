@@ -79,6 +79,14 @@
       "stepFreeAccess": "full"
     },
     {
+      "crsCode": "JYQ",
+      "stationName": "Jewellery Quarter",
+      "metroZone": 2,
+      "metroZoneSecond": 1,
+      "parking": false,
+      "stepFreeAccess": "full"
+    },
+    {
       "crsCode": "SBR",
       "stationName": "Soho Benson Road",
       "metroZone": 2,
@@ -157,6 +165,14 @@
       "stepFreeAccess": "full"
     },
     {
+      "crsCode": "BKL",
+      "stationName": "Black Lake",
+      "metroZone": 3,
+      "metroZoneSecond": 2,
+      "parking": true,
+      "stepFreeAccess": "full"
+    },
+    {
       "crsCode": "WBY",
       "stationName": "Wednesbury",
       "metroZone": 3,
@@ -196,6 +212,14 @@
       "stationName": "Priestfield",
       "metroZone": 3,
       "metroZoneSecond": 4,
+      "parking": true,
+      "stepFreeAccess": "full"
+    },
+    {
+      "crsCode": "PTF",
+      "stationName": "Priestfield",
+      "metroZone": 4,
+      "metroZoneSecond": 3,
       "parking": true,
       "stepFreeAccess": "full"
     },

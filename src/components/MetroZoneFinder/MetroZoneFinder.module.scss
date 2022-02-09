@@ -1,0 +1,38 @@
+// Refer to https://create-react-app.dev/docs/adding-a-css-modules-stylesheet
+// On how to use scss modules with React
+
+// Import WMN Design System scss for use in this scss file
+// Tilde (~) represents the root folder(src)
+@import '~assets/wmnds/vars';
+@import '~assets/wmnds/mixins';
+
+.mainHeading {
+  display: flex;
+  padding-top: $size-lg;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+
+  @media (min-width: $breakpoint-md) {
+    padding-top: 0;
+  }
+
+  button {
+    display: inline-flex !important;
+    // width: 100%;
+    margin-left: $size-sm;
+    white-space: nowrap;
+    justify-content: space-between;
+  }
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+
+  svg {
+    margin-right: $size-xsm;
+    transform: rotate(180deg);
+    fill: currentColor;
+  }
+}

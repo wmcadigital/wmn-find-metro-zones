@@ -7,7 +7,9 @@
 @import '~assets/wmnds/mixins';
 
 .mainHeading {
+  display: flex;
   padding-top: $size-lg;
+  justify-content: space-between;
   align-items: flex-start;
   flex-wrap: nowrap;
 
@@ -16,9 +18,11 @@
   }
 
   button {
-    display: inline-flex;
+    display: inline-flex !important;
+    // width: 100%;
     margin-left: $size-sm;
     white-space: nowrap;
+    justify-content: space-between;
   }
 }
 

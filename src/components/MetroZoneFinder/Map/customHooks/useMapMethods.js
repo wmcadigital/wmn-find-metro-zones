@@ -98,7 +98,6 @@ const useMapMethods = () => {
       // Loop through selected stations and highlight them on the map
       autoCompleteState.selectedStations.forEach((station) => {
         if (station.stationName) {
-          console.log(station);
           drawMapHighlights(station);
         }
       });

@@ -8,7 +8,7 @@ import MapView from './MapView/MapView';
 import ListView from './ListView/ListView';
 import s from './MetroZoneFinder.module.scss';
 
-function RailZoneFinder() {
+function MetroZoneFinder() {
   const [autoCompleteState] = useContext(AutoCompleteContext);
   const [mapState, mapDispatch] = useContext(MapContext);
   const { mapView } = mapState;
@@ -35,7 +35,7 @@ function RailZoneFinder() {
         ) : (
           <Breadcrumbs />
         )}
-        <div className={`wmnds-grid wmnds-grid--justify-between ${s.mainHeading}`}>
+        <div className={`${s.mainHeading}`}>
           <div className="wmnds-col-auto">
             <h1>Find my Metro zones</h1>
           </div>
@@ -61,4 +61,4 @@ function RailZoneFinder() {
   );
 }
 
-export default RailZoneFinder;
+export default MetroZoneFinder;

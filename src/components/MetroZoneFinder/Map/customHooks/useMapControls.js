@@ -1,5 +1,5 @@
 import { useContext, useEffect, useCallback } from 'react';
-// import debounce from 'lodash/debounce';
+import debounce from 'lodash/debounce';
 // Import contexts
 import { MapContext } from 'globalState';
 import s from '../Map.module.scss';
@@ -15,13 +15,13 @@ const useMapControls = () => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const zoomSelection = useCallback(
-    () => {},
-    // debounce((coords) => {
-    //   const { x, y, width, height } = coords;
-    //   if (mapRef?.current) {
-    //     mapRef.current.fitSelection(x, y, width, height);
-    //   }
-    // }, 100),
+    // () => {},
+    debounce((coords) => {
+      const { x, y, width, height } = coords;
+      if (mapRef?.current) {
+        mapRef.current.fitSelection(x, y, width, height);
+      }
+    }, 100),
     [mapRef]
   );
 
@@ -31,7 +31,6 @@ const useMapControls = () => {
     if (mapRef?.current && mapState.mapView) {
       const fitZoneToViewer = (zone, offset) => {
         const svg = mapRef.current.ViewerDOM; // Find svg node
-        console.log(svg);
         const zoneNode = svg.querySelector(`#Zone_${zone}`); // Find relevant zone node
         const transitionElement = svg.childNodes[1]; // Get the element of the map which is transformed (to add a transition)
         // Add a transition to smooth zoom effect
@@ -40,7 +39,7 @@ const useMapControls = () => {
         transitionElement.ontransitionend = () => {
           transitionElement.style.transition = 'none';
         };
-        if (zone !== 7) {
+        if (zone !== 5) {
           if (zoneNode) {
             // Get coordinates for zone
             const zoneCoords = zoneNode.getBBox();

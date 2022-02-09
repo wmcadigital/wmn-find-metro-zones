@@ -1,23 +1,20 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-// import { MapContext } from 'globalState';
-
 import Icon from '../Icon/Icon';
-// import AccessIcon from '../Icon/AccessIcon';
-// import Button from '../Button/Button';
-// import Checkbox from '../Checkbox/Checkbox';
-
 import s from './PandR.module.scss';
 
 const PandR = ({ mapView }) => {
-  // const [mapState, mapDispatch] = useContext(MapContext);
-  // const [showKey, setShowKey] = useState(!mapView);
   return (
-    <div className={mapView ? s.pandRWrapper : s.listViewWrapper}>
+    <div className={mapView ? s.mapViewWrapper : s.listViewWrapper}>
       {!mapView && <h3 className="wmnds-p-md">Key</h3>}
       <div className={`${s.content}`}>
-        <Icon iconName="modes-bg-p-r" color="primary" size={32} title="parkride" />
+        <Icon
+          iconName="modes-bg-p-r"
+          color="primary"
+          size={32}
+          title="parkride"
+          className="wmnds-m-l-md"
+        />
         <span className="wmnds-p-t-xs wmnds-p-l-sm">
           Tram stops with
           <a

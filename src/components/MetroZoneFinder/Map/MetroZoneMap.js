@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import { AutoCompleteContext } from 'globalState';
 import { ReactSVGPanZoom, TOOL_PAN } from 'react-svg-pan-zoom';
 import MapControls from './MapControls/MapControls';
 import useMapMethods from './customHooks/useMapMethods';
@@ -12,6 +13,14 @@ const MetroZoneMap = () => {
   const { mapSize } = mapState;
   const { zone1, zone2, zone3, zone4 } = mapState.highlightedZones;
   const { windowWidth } = useWindowHeightWidth();
+  const [autoCompleteState] = useContext(AutoCompleteContext);
+
+  const isSelectedStation = (stationName) => {
+    const stationIsSelected = autoCompleteState.selectedStations.some(
+      (station) => station.stationName === stationName
+    );
+    return stationIsSelected;
+  };
 
   // initial value for the map 1st render
   const initialValue = {
@@ -144,7 +153,13 @@ const MetroZoneMap = () => {
               />
             </symbol>
             <g id="Zone_4" data-name={zone4} className={zone4 ? s.zoneSelected : ''}>
-              <rect x="6235.4" y="21.8" className="st4" width="1350.2" height="1341.5" />
+              <rect
+                x="6235.4"
+                y="21.8"
+                className={`st4 ${zone4 ? s.selectedZone : ''}`}
+                width="1350.2"
+                height="1341.5"
+              />
               <path
                 className="st5"
                 d="M6841.5,331.8l72.4-98.8h42.4v105.3h28.3v29.3h-28.3v37h-33.1v-37h-81.6L6841.5,331.8z M6923.1,267.2
@@ -152,7 +167,13 @@ const MetroZoneMap = () => {
               />
             </g>
             <g id="Zone_3" data-name={zone3} className={zone3 ? s.zoneSelected : ''}>
-              <rect x="4608.3" y="21.8" className="st6" width="1619.2" height="1341.5" />
+              <rect
+                x="4608.3"
+                y="21.8"
+                className={`st6 ${zone3 ? s.selectedZone : ''}`}
+                width="1619.2"
+                height="1341.5"
+              />
               <path
                 className="st5"
                 d="M5387,303.3l46.5-41.2h-77v-29.1h119.9v27.6l-45.8,39.5c25.9,0.7,50.6,19.9,50.6,52.1
@@ -161,7 +182,13 @@ const MetroZoneMap = () => {
               />
             </g>
             <g id="Zone_2" data-name={zone2} className={zone2 ? s.zoneSelected : ''}>
-              <rect x="2051.7" y="21.8" className="st4" width="2548.6" height="1341.5" />
+              <rect
+                x="2051.7"
+                y="21.8"
+                className={`st4 ${zone2 ? s.selectedZone : ''}`}
+                width="2548.6"
+                height="1341.5"
+              />
               <path
                 className="st5"
                 d="M3262.3,296.7c-0.6-3.5-1-7.1-1-10.7c0-29.8,22.3-56.7,61.5-56.7c38,0,60.8,24.9,60.8,54.2
@@ -170,7 +197,12 @@ const MetroZoneMap = () => {
               />
             </g>
             <g id="Zone_1" data-name={zone1} className={zone1 ? s.zoneSelected : ''}>
-              <rect y="21.8" className="st6" width="2043.8" height="1341.5" />
+              <rect
+                y="21.8"
+                className={`st6 ${zone1 ? s.selectedZone : ''}`}
+                width="2043.8"
+                height="1341.5"
+              />
               <path
                 className="st5"
                 d="M987,404.7V288h-41.1v-22.8c24.7-0.7,41.9-14.3,45.3-32.2h29.1v171.7H987z"
@@ -1473,17 +1505,21 @@ const MetroZoneMap = () => {
               <path className="st7" d="M6574.3,1005.7v-39.3h7.2v39.3L6574.3,1005.7z" />
             </g>
             <g id="Priestfield">
-              <path
-                className="st2"
-                d="M6091,816.2h280.2c7,0,12.8,5.7,12.8,12.8v47.8c0,7-5.7,12.8-12.8,12.8H6091c-7,0-12.8-5.7-12.8-12.8v-47.8
+              {!isSelectedStation('Priestfield') && (
+                <>
+                  <path
+                    className="st2"
+                    d="M6091,816.2h280.2c7,0,12.8,5.7,12.8,12.8v47.8c0,7-5.7,12.8-12.8,12.8H6091c-7,0-12.8-5.7-12.8-12.8v-47.8
 		C6078.3,821.9,6084,816.2,6091,816.2z"
-              />
-              <path
-                className="st8"
-                d="M6371.3,817.6c6.2,0,11.3,5.1,11.3,11.3v47.8c0,6.2-5.1,11.3-11.3,11.3H6091c-6.2,0-11.3-5.1-11.3-11.3
+                  />
+                  <path
+                    className="st8"
+                    d="M6371.3,817.6c6.2,0,11.3,5.1,11.3,11.3v47.8c0,6.2-5.1,11.3-11.3,11.3H6091c-6.2,0-11.3-5.1-11.3-11.3
 		c0,0,0,0,0,0v-47.8c0-6.2,5.1-11.3,11.3-11.3H6371.3 M6371.3,814.7H6091c-7.8,0-14.2,6.4-14.2,14.2v47.8c0,7.8,6.4,14.2,14.2,14.2
 		h280.2c7.8,0,14.2-6.4,14.2-14.2v-47.8C6385.5,821.1,6379.1,814.7,6371.3,814.7z"
-              />
+                  />
+                </>
+              )}
               <g>
                 <defs>
                   <rect
@@ -2102,18 +2138,22 @@ const MetroZoneMap = () => {
               />
             </g>
             <g id="Black_Lake">
-              <path
-                className="st2"
-                d="M4464,957h280.1c7.1,0,12.8,5.7,12.8,12.8v62.1c0,7.1-5.7,12.8-12.8,12.8H4464c-7.1,0-12.8-5.7-12.8-12.8
+              {!isSelectedStation('Black Lake') && (
+                <>
+                  <path
+                    className="st2"
+                    d="M4464,957h280.1c7.1,0,12.8,5.7,12.8,12.8v62.1c0,7.1-5.7,12.8-12.8,12.8H4464c-7.1,0-12.8-5.7-12.8-12.8
 		v-62.1C4451.2,962.7,4456.9,957,4464,957z"
-              />
-              <path
-                className="st7"
-                d="M4744.1,958.5c6.3,0,11.4,5.1,11.4,11.3c0,0,0,0,0,0v62.2c0,6.3-5.1,11.4-11.4,11.4l0,0H4464
+                  />
+                  <path
+                    className="st7"
+                    d="M4744.1,958.5c6.3,0,11.4,5.1,11.4,11.3c0,0,0,0,0,0v62.2c0,6.3-5.1,11.4-11.4,11.4l0,0H4464
 		c-6.3,0-11.4-5.1-11.4-11.4c0,0,0,0,0,0v-62.2c0-6.3,5.1-11.4,11.4-11.4l0,0H4744.1 M4744.1,955.5H4464c-7.9,0-14.3,6.4-14.3,14.3
 		v62.2c0,7.9,6.4,14.3,14.3,14.3h280.1c7.9,0,14.3-6.3,14.3-14.2c0,0,0,0,0,0v-62.2C4758.4,961.9,4752,955.6,4744.1,955.5
 		L4744.1,955.5z"
-              />
+                  />
+                </>
+              )}
               <path
                 className="st7"
                 d="M4489.9,982.2c7.5,0,11.7,4.4,11.7,10.4c0.1,3.7-2.1,7-5.6,8.2c4.1,1.1,6.9,4.9,6.8,9.1
@@ -3154,17 +3194,21 @@ const MetroZoneMap = () => {
               />
             </g>
             <g id="Jewellery_Quarter">
-              <path
-                className="st2"
-                d="M1908.8,763.9h276.6c8,0,14.6,6.5,14.6,14.6V875c0,8-6.5,14.6-14.6,14.6h-276.6c-8,0-14.6-6.5-14.6-14.6v-96.4
+              {!isSelectedStation('Jewellery Quarter') && (
+                <>
+                  <path
+                    className="st2"
+                    d="M1908.8,763.9h276.6c8,0,14.6,6.5,14.6,14.6V875c0,8-6.5,14.6-14.6,14.6h-276.6c-8,0-14.6-6.5-14.6-14.6v-96.4
 		C1894.3,770.5,1900.8,763.9,1908.8,763.9z"
-              />
-              <path
-                className="st7"
-                d="M2185.5,765.4c7.2,0,13.1,5.9,13.1,13.1V875c0,7.2-5.9,13.1-13.1,13.1h-276.6c-7.2,0-13.1-5.9-13.1-13.1l0,0
+                  />
+                  <path
+                    className="st7"
+                    d="M2185.5,765.4c7.2,0,13.1,5.9,13.1,13.1V875c0,7.2-5.9,13.1-13.1,13.1h-276.6c-7.2,0-13.1-5.9-13.1-13.1l0,0
 		v-96.5c0-7.2,5.9-13.1,13.1-13.1L2185.5,765.4 M2185.5,762.5h-276.6c-8.8,0-16,7.2-16,16V875c0,8.8,7.2,16,16,16h276.6
 		c8.8,0,16-7.2,16-16v-96.5C2201.4,769.7,2194.3,762.5,2185.5,762.5L2185.5,762.5z"
-              />
+                  />
+                </>
+              )}
               <path
                 className="st7"
                 d="M1927.5,803.4l7.2-1.3v3.5c0.1,4,2.3,5.8,5.3,5.8s5.1-2.2,5.1-5.6v-26.6h7.5v26.6c0,6.9-5,12.7-12.5,12.7
@@ -3926,7 +3970,12 @@ const MetroZoneMap = () => {
               />
             </symbol>
             <g id="Zone_4" data-name={zone4} className={zone4 ? s.zoneSelected : ''}>
-              <rect y="3361.6" className="st4" width="1216.1" height="691.9" />
+              <rect
+                y="3361.6"
+                className={`st4 ${zone4 ? s.selectedZone : ''}`}
+                width="1216.1"
+                height="691.9"
+              />
               <path
                 className="st5"
                 d="M985.6,3732.8l59.8-81.6h35v87h23.4v24.2h-23.4v30.6H1053v-30.6h-67.4L985.6,3732.8z M1053,3679.4l-42.8,58.8
@@ -3934,7 +3983,12 @@ const MetroZoneMap = () => {
               />
             </g>
             <g id="Zone_3" data-name={zone3} className={zone3 ? s.zoneSelected : ''}>
-              <rect y="2473.5" className="st6" width="1216.1" height="879.9" />
+              <rect
+                y="2473.5"
+                className={`st6 ${zone3 ? s.selectedZone : ''}`}
+                width="1216.1"
+                height="879.9"
+              />
               <path
                 className="st5"
                 d="M1019.4,2915.4l38.4-34h-63.6v-24h99v22.8l-37.8,32.6c21.4,0.6,41.8,16.4,41.8,43c0,24.4-19.4,46.4-53.4,46.4
@@ -3943,7 +3997,12 @@ const MetroZoneMap = () => {
               />
             </g>
             <g id="Zone_2" data-name={zone2} className={zone2 ? s.zoneSelected : ''}>
-              <rect y="1078.2" className="st4" width="1216.1" height="1387.1" />
+              <rect
+                y="1078.2"
+                className={`st4 ${zone2 ? s.selectedZone : ''}`}
+                width="1216.1"
+                height="1387.1"
+              />
               <path
                 className="st5"
                 d="M994.5,1768c-0.5-2.9-0.8-5.8-0.8-8.8c0-24.6,18.4-46.8,50.8-46.8c31.4,0,50.2,20.6,50.2,44.8
@@ -3952,7 +4011,7 @@ const MetroZoneMap = () => {
               />
             </g>
             <g id="Zone_1" data-name={zone1} className={zone1 ? s.zoneSelected : ''}>
-              <rect className="st6" width="1216.1" height="1070" />
+              <rect className={`st6 ${zone1 ? s.selectedZone : ''}`} width="1216.1" height="1070" />
               <path
                 className="st5"
                 d="M1043.3,598.9v-96.4h-34v-18.8c20.4-0.6,34.6-11.8,37.4-26.6h24v141.8H1043.3z"
@@ -5274,17 +5333,21 @@ const MetroZoneMap = () => {
               <path className="st7" d="M728.2,3499v-29h5.3v29H728.2z" />
             </g>
             <g id="Priestfield">
-              <path
-                className="st2"
-                d="M263.9,3320.7h205.7c5.2,0,9.3,4.2,9.3,9.3v53.8c0,5.2-4.2,9.3-9.3,9.3H263.9c-5.2,0-9.3-4.2-9.3-9.3v-53.8
+              {!isSelectedStation('Priestfield') && (
+                <>
+                  <path
+                    className="st2"
+                    d="M263.9,3320.7h205.7c5.2,0,9.3,4.2,9.3,9.3v53.8c0,5.2-4.2,9.3-9.3,9.3H263.9c-5.2,0-9.3-4.2-9.3-9.3v-53.8
 		C254.6,3324.9,258.8,3320.7,263.9,3320.7z"
-              />
-              <path
-                className="st8"
-                d="M469.7,3321.7c4.6,0,8.4,3.7,8.4,8.4l0,0v53.8c0,4.6-3.7,8.4-8.3,8.4c0,0,0,0,0,0H263.9
+                  />
+                  <path
+                    className="st8"
+                    d="M469.7,3321.7c4.6,0,8.4,3.7,8.4,8.4l0,0v53.8c0,4.6-3.7,8.4-8.3,8.4c0,0,0,0,0,0H263.9
 		c-4.6,0-8.4-3.7-8.4-8.4l0,0v-53.8c0-4.6,3.7-8.4,8.3-8.4c0,0,0,0,0,0H469.7 M469.7,3319.7H263.9c-5.7,0-10.3,4.6-10.3,10.3v53.8
 		c0,5.7,4.6,10.3,10.3,10.3h205.8c5.7,0,10.3-4.6,10.3-10.3v-53.8C480,3324.4,475.3,3319.8,469.7,3319.7L469.7,3319.7z"
-              />
+                  />
+                </>
+              )}
               <path
                 className="st7"
                 d="M282.5,3360.2v10.7H277v-28.3h10.6c5.6,0,9.3,3.7,9.3,8.8s-3.7,8.8-9.3,8.8L282.5,3360.2z M286.9,3355.4
@@ -5903,17 +5966,21 @@ const MetroZoneMap = () => {
               />
             </g>
             <g id="Black_Lake">
-              <path
-                className="st2"
-                d="M547.2,2433.3h215.9c5.4,0,9.8,4.4,9.8,9.8v52.8c0,5.4-4.4,9.8-9.8,9.8H547.2c-5.4,0-9.8-4.4-9.8-9.8v-52.8
+              {!isSelectedStation('Black Lake') && (
+                <>
+                  <path
+                    className="st2"
+                    d="M547.2,2433.3h215.9c5.4,0,9.8,4.4,9.8,9.8v52.8c0,5.4-4.4,9.8-9.8,9.8H547.2c-5.4,0-9.8-4.4-9.8-9.8v-52.8
 		C537.4,2437.7,541.8,2433.3,547.2,2433.3z"
-              />
-              <path
-                className="st8"
-                d="M763.1,2434.6c4.7,0,8.6,3.8,8.6,8.6l0,0v52.8c0,4.7-3.8,8.6-8.6,8.6h0H547.2c-4.7,0-8.6-3.8-8.6-8.6l0,0
+                  />
+                  <path
+                    className="st8"
+                    d="M763.1,2434.6c4.7,0,8.6,3.8,8.6,8.6l0,0v52.8c0,4.7-3.8,8.6-8.6,8.6h0H547.2c-4.7,0-8.6-3.8-8.6-8.6l0,0
 		v-52.8c0-4.7,3.8-8.6,8.6-8.6h0H763.1 M763.1,2432.1H547.2c-6.1,0-11.1,5-11.1,11.1v52.8c0,6.1,5,11.1,11.1,11.1h215.9
 		c6.1,0,11.1-5,11.1-11.1v-52.8C774.2,2437,769.2,2432.1,763.1,2432.1z"
-              />
+                  />
+                </>
+              )}
               <path
                 className="st7"
                 d="M570.2,2454.8c5.5,0,8.6,3.2,8.6,7.6c0.1,2.7-1.6,5.1-4.1,6.1c3,0.8,5.1,3.6,5,6.7c0,4.6-3.4,7.9-8.8,7.9h-11
@@ -6962,17 +7029,21 @@ const MetroZoneMap = () => {
               />
             </g>
             <g id="Jewellery_Quarter">
-              <path
-                className="st2"
-                d="M269.9,1015.5h198.6c5.8,0,10.5,4.7,10.5,10.4v90.5c0,5.8-4.7,10.4-10.5,10.4H269.9c-5.8,0-10.5-4.7-10.5-10.4
+              {!isSelectedStation('Jewellery Quarter') && (
+                <>
+                  <path
+                    className="st2"
+                    d="M269.9,1015.5h198.6c5.8,0,10.5,4.7,10.5,10.4v90.5c0,5.8-4.7,10.4-10.5,10.4H269.9c-5.8,0-10.5-4.7-10.5-10.4
 		v-90.5C259.5,1020.2,264.2,1015.5,269.9,1015.5z"
-              />
-              <path
-                className="st8"
-                d="M468.5,1016.4c5.2,0,9.5,4.2,9.5,9.5v90.5c0,5.2-4.3,9.5-9.5,9.5H269.9c-5.2,0-9.5-4.2-9.5-9.5v-90.5
+                  />
+                  <path
+                    className="st8"
+                    d="M468.5,1016.4c5.2,0,9.5,4.2,9.5,9.5v90.5c0,5.2-4.3,9.5-9.5,9.5H269.9c-5.2,0-9.5-4.2-9.5-9.5v-90.5
 		c0-5.2,4.2-9.5,9.5-9.5c0,0,0,0,0,0H468.5 M468.5,1014.5H269.9c-6.3,0-11.4,5.1-11.4,11.4v90.5c0,6.3,5.1,11.4,11.4,11.4h198.6
 		c6.3,0,11.4-5.1,11.4-11.4v-90.5C479.9,1019.6,474.8,1014.5,468.5,1014.5L468.5,1014.5z"
-              />
+                  />
+                </>
+              )}
               <path
                 className="st7"
                 d="M281.3,1054.2l5.3-1v2.6c0,2.9,1.7,4.2,3.9,4.2s3.8-1.6,3.8-4.1v-19.6h5.5v19.6c0.2,5-3.8,9.2-8.8,9.4

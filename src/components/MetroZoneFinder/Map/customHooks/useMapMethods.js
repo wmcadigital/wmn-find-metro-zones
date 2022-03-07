@@ -63,12 +63,12 @@ const useMapMethods = () => {
         // Set attributes and positioning on the new rect element using coordinates
         p.setAttribute('id', `${station.id}_text_bg`); // set id
         p.setAttribute('class', s.textBg); // set class
-        p.setAttribute('y', gCoords.y - 2.25); // set y position (offset slightly for better position)
-        p.setAttribute('x', gCoords.x - 4); // set x position (offset slightly for better position)
-        p.setAttribute('rx', 3); // set border radius x
-        p.setAttribute('ry', 3); // set border radius y
-        p.setAttribute('width', gCoords.width + 8); // set width to group width + padding
-        p.setAttribute('height', gCoords.height + 4); // set height to group height + padding
+        p.setAttribute('y', gCoords.y - 15); // set y position (offset slightly for better position)
+        p.setAttribute('x', gCoords.x - 35); // set x position (offset slightly for better position)
+        p.setAttribute('rx', 15); // set border radius x
+        p.setAttribute('ry', 15); // set border radius y
+        p.setAttribute('width', gCoords.width + 70); // set width to group width + padding
+        p.setAttribute('height', gCoords.height + 30); // set height to group height + padding
         p.setAttribute('stroke', '#fff'); // add a white stroke
         p.setAttribute('stroke-width', '1'); // set stroke width
         p.setAttribute('fill', '#3c1053'); // set fill colour (WMN primary purple)

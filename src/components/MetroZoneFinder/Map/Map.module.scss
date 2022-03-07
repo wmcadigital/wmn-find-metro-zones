@@ -69,6 +69,14 @@ $duration: 0.75s;
   }
 }
 
+.selectedZone {
+  fill: get-color(secondary, 70) !important;
+}
+
+.stationSelected {
+  fill: get-color(primary) !important;
+}
+
 .hideStations {
   & > g:not(.showStation):not(.selectedStation) {
     display: none;

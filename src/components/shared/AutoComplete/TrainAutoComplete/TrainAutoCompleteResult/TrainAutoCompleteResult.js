@@ -20,7 +20,6 @@ const TrainAutoCompleteResult = (props) => {
       payload,
     });
   };
-
   return (
     <li
       className="wmnds-autocomplete-suggestions__li"

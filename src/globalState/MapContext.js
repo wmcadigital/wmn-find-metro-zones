@@ -21,9 +21,6 @@ export const MapContextProvider = (props) => {
       zone2: false,
       zone3: false,
       zone4: false,
-      zone5: false,
-      zone6: false,
-      zone7: false,
     },
     accessVisibility: {
       full: false,

@@ -22,7 +22,6 @@ export const AutoCompleteProvider = (props) => {
   // Extract values and remove first 2 items as we already have them
   additionalQueries = additionalQueries.slice(2).map((value) => value.id);
   additionalStations = additionalStations.slice(2).map((value) => ({ id: value.id }));
-
   // Set intial state
   const initialState = {
     ticketMode: getSearchParam('ticketSearch') === 'true',

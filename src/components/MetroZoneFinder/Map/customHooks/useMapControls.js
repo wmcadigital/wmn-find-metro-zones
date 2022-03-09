@@ -1,13 +1,15 @@
 import { useContext, useEffect, useCallback } from 'react';
 import debounce from 'lodash/debounce';
 // Import contexts
-import { MapContext } from 'globalState';
+import { MapContext, AutoCompleteContext } from 'globalState';
 import s from '../Map.module.scss';
 import metroData from '../../MetroData.json';
 
 const useMapControls = () => {
   const [mapState, mapDispatch] = useContext(MapContext);
   const { mapRef, reset } = mapState;
+  const [autoCompleteState] = useContext(AutoCompleteContext);
+
   // Map transform/navigation functions
   const fitToViewer = () => reset();
   const zoomInCenter = () => mapRef.current.zoomOnViewerCenter(1.2);
@@ -25,6 +27,45 @@ const useMapControls = () => {
     [mapRef]
   );
 
+  const zoneWidths = [
+    { zone: 1, width: 2044, x: 0 },
+    { zone: 2, width: 2549, x: 2052 },
+    { zone: 3, width: 1619, x: 4608 },
+    { zone: 4, width: 1350, x: 6235 },
+  ];
+  const zoneHeights = [-0, -1400, -2100, -2500];
+
+  const getZoneCoords = () => {
+    // extract all unique zones from selected stationa and filter/remove undefined zones
+    const getSelectedZones = [
+      ...new Set(
+        autoCompleteState.selectedStations
+          .map((station) => station.metroZone)
+          .filter((zone) => zone)
+      ),
+    ];
+
+    // get lowest zone number index
+    const lowestZone = Math.min(...getSelectedZones) - 1;
+
+    // get highest zone number index
+    const highestZone = Math.max(...getSelectedZones);
+
+    // get all width of zone between highest zone number and lowest zone number
+    const getSelectedZonesRangeWidths = zoneWidths.slice(lowestZone, highestZone);
+
+    // accumlate all width ranges
+    const sumSelectedZonesRangeWidths = getSelectedZonesRangeWidths
+      .map((zone) => zone.width)
+      .reduce((prevZone, currZone) => prevZone + currZone, 0);
+
+    return {
+      width: sumSelectedZonesRangeWidths,
+      x: getSelectedZonesRangeWidths[0].x,
+      zonesLength: getSelectedZonesRangeWidths.length,
+    };
+  };
+
   // eslint-disable-next-line consistent-return
   useEffect(() => {
     let mounted = true;
@@ -39,26 +80,14 @@ const useMapControls = () => {
         transitionElement.ontransitionend = () => {
           transitionElement.style.transition = 'none';
         };
-        if (zone !== 5) {
-          if (zoneNode) {
-            // Get coordinates for zone
-            const zoneCoords = zoneNode.getBBox();
-            // zoom in to fit zone coordinates to map
-            zoomSelection({
-              x: zoneCoords.x - offset / 2,
-              y: zoneCoords.y - offset / 2,
-              width: zoneCoords.width + offset,
-              height: zoneCoords.height + offset,
-            });
-          }
-        } else {
+        if (zoneNode) {
           // Get coordinates for zone
-          const zoneCoords = transitionElement.childNodes[0].getBBox();
+          const zoneCoords = zoneNode.getBBox();
           // zoom in to fit zone coordinates to map
           zoomSelection({
-            x: zoneCoords.x - offset / 2,
-            y: zoneCoords.y - offset / 2,
-            width: zoneCoords.width + offset,
+            x: getZoneCoords().x,
+            y: zoneHeights[getZoneCoords().zonesLength - 1],
+            width: getZoneCoords().width,
             height: zoneCoords.height + offset,
           });
         }

@@ -1540,17 +1540,7 @@ const MetroZoneMap = () => {
                   style={{
                     clipPath: '(#SVGID_00000133505986083015986160000007009527904313696135_)',
                   }}
-                >
-                  <use
-                    xlinkHref="#Park_and_ride"
-                    width="72.1"
-                    height="72.1"
-                    x="-36.1"
-                    y="-36.1"
-                    transform="matrix(0.9492 0 0 0.9492 6231.0952 754.927)"
-                    style={{ overflow: 'visible' }}
-                  />
-                </g>
+                />
               </g>
               <path
                 className="st7"
@@ -1604,6 +1594,15 @@ const MetroZoneMap = () => {
 		c0-4.8-2.9-7.4-6.6-7.4c-3.7,0-6.6,2.7-6.6,7.5C6332.4,865.6,6335.2,868.4,6339,868.4L6339,868.4z"
               />
             </g>
+            <use
+              xlinkHref="#Park_and_ride"
+              width="72.1"
+              height="72.1"
+              x="-36.1"
+              y="-36.1"
+              transform="matrix(0.9492 0 0 0.9492 6231.0952 754.927)"
+              style={{ overflow: 'visible' }}
+            />
             <g id="The_Crescent">
               <path className="st7" d="M5853.8,974.3v31.4h-7.5v-31.4h-12.2v-7.1h31.8v7.1H5853.8z" />
               <path
@@ -1788,17 +1787,7 @@ const MetroZoneMap = () => {
                   style={{
                     clipPath: '(#SVGID_00000026876872525856073300000009326687939975834806_)',
                   }}
-                >
-                  <use
-                    xlinkHref="#Park_and_ride"
-                    width="72.1"
-                    height="72.1"
-                    x="-36.1"
-                    y="-36.1"
-                    transform="matrix(0.9492 0 0 0.9492 5301.3174 763.6439)"
-                    style={{ overflow: 'visible' }}
-                  />
-                </g>
+                />
               </g>
               <path
                 className="st7"
@@ -1855,6 +1844,15 @@ const MetroZoneMap = () => {
 		 M5452.2,857.8c-0.1-2.7-1.8-5.3-6-5.3c-3.1-0.1-5.7,2.2-6,5.3H5452.2z"
               />
             </g>
+            <use
+              xlinkHref="#Park_and_ride"
+              width="72.1"
+              height="72.1"
+              x="-36.1"
+              y="-36.1"
+              transform="matrix(0.9492 0 0 0.9492 5301.3174 763.6439)"
+              style={{ overflow: 'visible' }}
+            />
             <g id="Wednesbury_Parkway">
               <path
                 className="st7"
@@ -1967,19 +1965,18 @@ const MetroZoneMap = () => {
                   style={{
                     clipPath: '(#SVGID_00000118389323441284622030000013234283043042187703_)',
                   }}
-                >
-                  <use
-                    xlinkHref="#Park_and_ride"
-                    width="72.1"
-                    height="72.1"
-                    x="-36.1"
-                    y="-36.1"
-                    transform="matrix(0.9492 0 0 0.9492 5068.585 1137.1936)"
-                    style={{ overflow: 'visible' }}
-                  />
-                </g>
+                />
               </g>
             </g>
+            <use
+              xlinkHref="#Park_and_ride"
+              width="72.1"
+              height="72.1"
+              x="-36.1"
+              y="-36.1"
+              transform="matrix(0.9492 0 0 0.9492 5068.585 1137.1936)"
+              style={{ overflow: 'visible' }}
+            />
             <g id="Wednesbury">
               <path
                 className="st7"
@@ -2216,19 +2213,18 @@ const MetroZoneMap = () => {
                   style={{
                     clipPath: '(#SVGID_00000011729089114553211950000012695009369462783917_)',
                   }}
-                >
-                  <use
-                    xlinkHref="#Park_and_ride"
-                    width="72.1"
-                    height="72.1"
-                    x="-36.1"
-                    y="-36.1"
-                    transform="matrix(0.9492 0 0 0.9492 4603.9238 1103.2944)"
-                    style={{ overflow: 'visible' }}
-                  />
-                </g>
+                />
               </g>
             </g>
+            <use
+              xlinkHref="#Park_and_ride"
+              width="72.1"
+              height="72.1"
+              x="-36.1"
+              y="-36.1"
+              transform="matrix(0.9492 0 0 0.9492 4603.9238 1103.2944)"
+              style={{ overflow: 'visible' }}
+            />
             <g id="Dudley_Street">
               <path
                 className="st7"
@@ -2865,19 +2861,18 @@ const MetroZoneMap = () => {
                   style={{
                     clipPath: '(#SVGID_00000115479855473506526270000002671803075538345107_)',
                   }}
-                >
-                  <use
-                    xlinkHref="#Park_and_ride"
-                    width="72.1"
-                    height="72.1"
-                    x="-36.1"
-                    y="-36.1"
-                    transform="matrix(0.9492 0 0 0.9492 2976.4241 763.4308)"
-                    style={{ overflow: 'visible' }}
-                  />
-                </g>
+                />
               </g>
             </g>
+            <use
+              xlinkHref="#Park_and_ride"
+              width="72.1"
+              height="72.1"
+              x="-36.1"
+              y="-36.1"
+              transform="matrix(0.9492 0 0 0.9492 2976.4241 763.4308)"
+              style={{ overflow: 'visible' }}
+            />
             <g id="Handsworth">
               <path
                 className="st7"
@@ -5671,19 +5666,18 @@ const MetroZoneMap = () => {
                   style={{
                     clipPath: 'url(#SVGID_00000116931280927818666930000002797610535017804933_)',
                   }}
-                >
-                  <use
-                    xlinkHref="#Park_and_ride"
-                    width="36.9"
-                    height="36.9"
-                    x="-18.4"
-                    y="-18.4"
-                    transform="matrix(1 0 0 1 438.235 2787.3025)"
-                    style={{ overFlow: 'visible' }}
-                  />
-                </g>
+                />
               </g>
             </g>
+            <use
+              xlinkHref="#Park_and_ride"
+              width="36.9"
+              height="36.9"
+              x="-18.4"
+              y="-18.4"
+              transform="matrix(1 0 0 1 438.235 2787.3025)"
+              style={{ overFlow: 'visible' }}
+            />
             <g id="Wednesbury_Parkway">
               <path
                 className="st7"
@@ -6043,19 +6037,18 @@ const MetroZoneMap = () => {
                   style={{
                     clipPath: 'url(#SVGID_00000003089798241555203210000004900819085577974186_)',
                   }}
-                >
-                  <use
-                    xlinkHref="#Park_and_ride"
-                    width="36.9"
-                    height="36.9"
-                    x="-18.4"
-                    y="-18.4"
-                    transform="matrix(1 0 0 1 554.745 2399.1323)"
-                    style={{ overFlow: 'visible' }}
-                  />
-                </g>
+                />
               </g>
             </g>
+            <use
+              xlinkHref="#Park_and_ride"
+              width="36.9"
+              height="36.9"
+              x="-18.4"
+              y="-18.4"
+              transform="matrix(1 0 0 1 554.745 2399.1323)"
+              style={{ overFlow: 'visible' }}
+            />
             <g id="Dudley_Street">
               <path
                 className="st7"

@@ -62,12 +62,6 @@ const Result = () => {
                     </strong>
                   </>
                 )}
-                {/* {metroZone === 6 && (
-                  <>
-                    in <strong>nTrain Zone 5</strong>
-                  </>
-                )} */}
-                {/* {metroZone === 7 && <strong>Out of County</strong>}. */}
               </p>
             ))}
           </div>
@@ -110,7 +104,7 @@ const Result = () => {
       {parkingStations.length > 0 && (
         <div className={`${s.nowrap} wmnds-grid wmnds-grid--spacing-2-sm`}>
           <div className="wmnds-col-auto">
-            <Icon iconName="general-parking" size={20} color="cta" />
+            <Icon iconName="modes-bg-p-r" size={24} color="cta" />
           </div>
           <div className="wmnds-col-auto">
             <p>Parking is available at {arrayToSentence(parkingStations)}.</p>

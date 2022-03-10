@@ -180,6 +180,13 @@
       "stepFreeAccess": "full"
     },
     {
+      "crsCode": "BNC",
+      "stationName": "Bilston Central",
+      "metroZone": 3,
+      "parking": false,
+      "stepFreeAccess": "full"
+    },
+    {
       "crsCode": "TCS",
       "stationName": "The Crescent",
       "metroZone": 3,

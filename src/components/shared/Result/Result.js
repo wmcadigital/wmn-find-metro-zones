@@ -82,13 +82,17 @@ const Result = () => {
         </>
       )}
       {fullAccessStations.length > 0 && (
-        <div className={`${s.nowrap} wmnds-grid wmnds-grid--spacing-2-sm`}>
-          <div className="wmnds-col-auto">
-            <AccessIcon type="full" />
-          </div>
-          <div className="wmnds-col-auto">
-            <p>Full step-free access is available at {arrayToSentence(fullAccessStations)}.</p>
-          </div>
+        // <div className={`${s.nowrap} wmnds-grid wmnds-grid--spacing-2-sm`}>
+        //   <div className="wmnds-col-auto">
+        //     <AccessIcon type="full" />
+        //   </div>
+        //   <div className="wmnds-col-auto">
+        //     <p>Full step-free access is available at {arrayToSentence(fullAccessStations)}.</p>
+        //   </div>
+        // </div>
+        <div className={`${s.nowrap}`}>
+          <AccessIcon size={20} type="full" />
+          <p>Full step-free access is available at {arrayToSentence(fullAccessStations)}.</p>
         </div>
       )}
       {partAccessStations.length > 0 && (

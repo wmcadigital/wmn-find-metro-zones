@@ -4,11 +4,13 @@ import debounce from 'lodash/debounce';
 import { MapContext, AutoCompleteContext } from 'globalState';
 import s from '../Map.module.scss';
 import metroData from '../../MetroData.json';
+import useWindowHeightWidth from './useWindowHeightWidth';
 
 const useMapControls = () => {
   const [mapState, mapDispatch] = useContext(MapContext);
   const { mapRef, reset } = mapState;
   const [autoCompleteState] = useContext(AutoCompleteContext);
+  const { windowWidth } = useWindowHeightWidth();
 
   // Map transform/navigation functions
   const fitToViewer = () => reset();
@@ -27,13 +29,13 @@ const useMapControls = () => {
     [mapRef]
   );
 
-  const zoneWidths = [
-    { zone: 1, width: 2044, x: 0 },
-    { zone: 2, width: 2549, x: 2052 },
-    { zone: 3, width: 1619, x: 4608 },
-    { zone: 4, width: 1350, x: 6235 },
+  const zoneSpecs = [
+    { zone: 1, width: 2044, mobileHeight: 1070, mobileY: 0, x: 0 },
+    { zone: 2, width: 2549, mobileHeight: 1387, mobileY: 1078, x: 2052 },
+    { zone: 3, width: 1619, mobileHeight: 880, mobileY: 2473, x: 4608 },
+    { zone: 4, width: 1350, mobileHeight: 692, mobileY: 3362, x: 6235 },
   ];
-  const zoneHeights = [-0, -1400, -2100, -2500];
+  const zoneHeights = [-0, -600, -2100, -2500];
 
   const getZoneCoords = () => {
     // extract all unique zones from selected stationa and filter/remove undefined zones
@@ -52,17 +54,24 @@ const useMapControls = () => {
     const highestZone = Math.max(...getSelectedZones);
 
     // get all width of zone between highest zone number and lowest zone number
-    const getSelectedZonesRangeWidths = zoneWidths.slice(lowestZone, highestZone);
-
+    // const getSelectedZonesRangeWidths = zoneWidths.slice(lowestZone, highestZone);
+    const getSelectedZonesRange = zoneSpecs.slice(lowestZone, highestZone);
     // accumlate all width ranges
-    const sumSelectedZonesRangeWidths = getSelectedZonesRangeWidths
+    const sumSelectedZonesRangeWidths = getSelectedZonesRange
       .map((zone) => zone.width)
+      .reduce((prevZone, currZone) => prevZone + currZone, 0);
+    // accumlate all heights for mobile ranges
+
+    const sumSelectedZonesRangeHeight = getSelectedZonesRange
+      .map((zone) => zone.mobileHeight)
       .reduce((prevZone, currZone) => prevZone + currZone, 0);
 
     return {
       width: sumSelectedZonesRangeWidths,
-      x: getSelectedZonesRangeWidths[0].x,
-      zonesLength: getSelectedZonesRangeWidths.length,
+      x: getSelectedZonesRange[0].x,
+      mobileY: getSelectedZonesRange[0].mobileY,
+      mobileHeight: sumSelectedZonesRangeHeight,
+      zonesCount: getSelectedZonesRange.length,
     };
   };
 
@@ -84,12 +93,19 @@ const useMapControls = () => {
           // Get coordinates for zone
           const zoneCoords = zoneNode.getBBox();
           // zoom in to fit zone coordinates to map
-          zoomSelection({
+          const defaultCoords = {
             x: getZoneCoords().x,
-            y: zoneHeights[getZoneCoords().zonesLength - 1],
+            y: zoneHeights[getZoneCoords().zonesCount - 1],
             width: getZoneCoords().width,
             height: zoneCoords.height + offset,
-          });
+          };
+          const mobileCoords = {
+            y: getZoneCoords().mobileY - 80,
+            x: zoneCoords.x - offset / 2,
+            width: zoneCoords.width + offset,
+            height: getZoneCoords().mobileHeight + 100,
+          };
+          zoomSelection(windowWidth > 768 ? defaultCoords : mobileCoords);
         }
       };
 

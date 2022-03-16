@@ -23,10 +23,25 @@ const TrainAutoComplete = ({ id, label, queryId }) => {
   const selectedService = autoCompleteState.selectedStations[queryId];
 
   const { loading, errorInfo, results, getAutoCompleteResults } = useAutoCompleteAPI(queryId);
-
   const filteredResults = results.filter(
     (station) => !autoCompleteState.selectedStations.some((s) => s.id === station.crsCode)
   );
+  // To remove duplicated station names in the dropdown for multiple zones
+
+  const resArr = [];
+  filteredResults.forEach((item) => {
+    const i = resArr.findIndex((x) => x.stationName === item.stationName);
+    if (i <= -1) {
+      resArr.push({
+        crsCode: item.crsCode,
+        stationName: item.stationName,
+        metroZone: item.metroZone,
+        metroZoneSecond: item.metroZoneSecond,
+        parking: item.parking,
+        stepFreeAccess: item.stepFreeAccess,
+      });
+    }
+  });
   const updateQuery = (query, qId) => {
     autoCompleteDispatch({
       type: 'UPDATE_QUERY',
@@ -88,7 +103,7 @@ const TrainAutoComplete = ({ id, label, queryId }) => {
             // Only show autocomplete results if there is a query
             trainQuery && (
               <ul className="wmnds-autocomplete-suggestions" ref={resultsList}>
-                {filteredResults.map((result) => (
+                {resArr.map((result) => (
                   <TrainAutoCompleteResult
                     key={result.crsCode}
                     result={result}

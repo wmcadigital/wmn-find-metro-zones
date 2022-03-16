@@ -62,12 +62,6 @@ const Result = () => {
                     </strong>
                   </>
                 )}
-                {/* {metroZone === 6 && (
-                  <>
-                    in <strong>nTrain Zone 5</strong>
-                  </>
-                )} */}
-                {/* {metroZone === 7 && <strong>Out of County</strong>}. */}
               </p>
             ))}
           </div>
@@ -88,13 +82,17 @@ const Result = () => {
         </>
       )}
       {fullAccessStations.length > 0 && (
-        <div className={`${s.nowrap} wmnds-grid wmnds-grid--spacing-2-sm`}>
-          <div className="wmnds-col-auto">
-            <AccessIcon type="full" />
-          </div>
-          <div className="wmnds-col-auto">
-            <p>Full step-free access is available at {arrayToSentence(fullAccessStations)}.</p>
-          </div>
+        // <div className={`${s.nowrap} wmnds-grid wmnds-grid--spacing-2-sm`}>
+        //   <div className="wmnds-col-auto">
+        //     <AccessIcon type="full" />
+        //   </div>
+        //   <div className="wmnds-col-auto">
+        //     <p>Full step-free access is available at {arrayToSentence(fullAccessStations)}.</p>
+        //   </div>
+        // </div>
+        <div className={`${s.nowrap}`}>
+          <AccessIcon size={20} type="full" />
+          <p>Full step-free access is available at {arrayToSentence(fullAccessStations)}.</p>
         </div>
       )}
       {partAccessStations.length > 0 && (
@@ -110,7 +108,7 @@ const Result = () => {
       {parkingStations.length > 0 && (
         <div className={`${s.nowrap} wmnds-grid wmnds-grid--spacing-2-sm`}>
           <div className="wmnds-col-auto">
-            <Icon iconName="general-parking" size={20} color="cta" />
+            <Icon iconName="modes-bg-p-r" size={24} color="cta" />
           </div>
           <div className="wmnds-col-auto">
             <p>Parking is available at {arrayToSentence(parkingStations)}.</p>

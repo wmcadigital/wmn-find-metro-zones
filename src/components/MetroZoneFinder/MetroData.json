@@ -1,27 +1,6 @@
 {
   "metroStationAccess": [
     {
-      "crsCode": "EDG",
-      "stationName": "Edgbaston Village",
-      "metroZone": 1,
-      "parking": false,
-      "stepFreeAccess": "full"
-    },
-    {
-      "crsCode": "FWY",
-      "stationName": "Five Ways",
-      "metroZone": 1,
-      "parking": false,
-      "stepFreeAccess": "full"
-    },
-    {
-      "crsCode": "BYP",
-      "stationName": "Brindley Place ",
-      "metroZone": 1,
-      "parking": false,
-      "stepFreeAccess": "full"
-    },
-    {
       "crsCode": "LIB",
       "stationName": "Library",
       "metroZone": 1,
@@ -71,7 +50,7 @@
       "stepFreeAccess": "full"
     },
     {
-      "crsCode": "JYQ",
+      "crsCode": "JYQ1",
       "stationName": "Jewellery Quarter",
       "metroZone": 1,
       "metroZoneSecond": 2,
@@ -79,7 +58,7 @@
       "stepFreeAccess": "full"
     },
     {
-      "crsCode": "JYQ",
+      "crsCode": "JYQ2",
       "stationName": "Jewellery Quarter",
       "metroZone": 2,
       "metroZoneSecond": 1,
@@ -157,7 +136,7 @@
       "stepFreeAccess": "full"
     },
     {
-      "crsCode": "BKL",
+      "crsCode": "BKL2",
       "stationName": "Black Lake",
       "metroZone": 2,
       "metroZoneSecond": 3,
@@ -165,7 +144,7 @@
       "stepFreeAccess": "full"
     },
     {
-      "crsCode": "BKL",
+      "crsCode": "BKL3",
       "stationName": "Black Lake",
       "metroZone": 3,
       "metroZoneSecond": 2,
@@ -201,6 +180,13 @@
       "stepFreeAccess": "full"
     },
     {
+      "crsCode": "BNC",
+      "stationName": "Bilston Central",
+      "metroZone": 3,
+      "parking": false,
+      "stepFreeAccess": "full"
+    },
+    {
       "crsCode": "TCS",
       "stationName": "The Crescent",
       "metroZone": 3,
@@ -208,7 +194,7 @@
       "stepFreeAccess": "full"
     },
     {
-      "crsCode": "PTF",
+      "crsCode": "PTF3",
       "stationName": "Priestfield",
       "metroZone": 3,
       "metroZoneSecond": 4,
@@ -216,7 +202,7 @@
       "stepFreeAccess": "full"
     },
     {
-      "crsCode": "PTF",
+      "crsCode": "PTF4",
       "stationName": "Priestfield",
       "metroZone": 4,
       "metroZoneSecond": 3,

@@ -60,13 +60,21 @@ $duration: 0.75s;
   width: 100%;
   height: 100%;
   margin-top: $size-lg;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .zoneSelected {
   path:first-child {
     fill: get-color(secondary, 70);
   }
+}
+
+.selectedZone {
+  fill: get-color(secondary, 70) !important;
+}
+
+.stationSelected {
+  fill: get-color(primary) !important;
 }
 
 .hideStations {

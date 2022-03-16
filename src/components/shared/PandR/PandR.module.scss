@@ -26,17 +26,17 @@
 
 .content {
   display: flex;
-  width: 80%;
+  width: 100%;
 
   @media (min-width: $breakpoint-md) {
     width: 100%;
-    justify-content: center;
+    // justify-content: center;
   }
 }
 
 .listViewWrapper {
   position: static;
-  width: 288px;
+  // width: 288px;
   height: 132px;
 
   h3 {
@@ -46,7 +46,7 @@
 
   .content {
     @media (min-width: $breakpoint-md) {
-      width: 90%;
+      width: 100%;
     }
   }
 }

@@ -24,10 +24,10 @@ const MetroZoneMap = () => {
 
   // initial value for the map 1st render
   const initialValue = {
-    SVGHeight: 279,
+    SVGHeight: 432,
     SVGMinX: 0,
     SVGMinY: 0,
-    SVGWidth: 749,
+    SVGWidth: 843,
     a: 0.09870479872631363,
     b: 0,
     c: 0,
@@ -89,7 +89,7 @@ const MetroZoneMap = () => {
         onChangeValue={setValues}
       >
         {windowWidth > 768 ? (
-          <svg viewBox="0 0 432 843">
+          <svg>
             <style>
               {
                 '.st0 {clip-path:url(#SVGID_00000046312892275571864610000008328776898878226325_);}.st1{fill:#0075C9;}.st2 {fill: #FFFFFF;}.st3 {fill: #3D1152;}.st4 {fill: #DED7D6;}.st5{fill: #221E20;}.st6{fill: #EEEAEA;}.st7{fill: #2D2A26;}.st8{fill:#1D1D1C;}'
@@ -3901,7 +3901,7 @@ const MetroZoneMap = () => {
             </g>
           </svg>
         ) : (
-          <svg viewBox="0 0 432 843">
+          <svg>
             <style>
               {
                 '.st0{clip-path:url(#SVGID_00000031925839151982136660000012007475375414382978_);}.st1{fill:#0075C9;}.st2{fill:#FFFFFF;}.st3{fill:#3D1152;}.st4{fill:#DED7D6;}.st5{fill:#221E20;}.st6{fill:#EEEAEA;}.st7{fill:#2D2A26;}.st8{fill:#1D1D1C;}'

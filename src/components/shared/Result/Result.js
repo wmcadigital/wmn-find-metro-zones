@@ -56,10 +56,14 @@ const Result = () => {
                 {stationName} is{' '}
                 {metroZone < 5 && (
                   <>
-                    in{' '}
-                    <strong>
-                      Zone {metroZone} {metroZoneSecond && ` & ${metroZoneSecond}`}
-                    </strong>
+                    in <strong>Zone {metroZone} </strong>{' '}
+                    {metroZoneSecond && (
+                      <>
+                        when travelling towards Library. It is in
+                        <strong>Zone {metroZoneSecond}</strong> when travelling towards
+                        Wolverhampton.
+                      </>
+                    )}
                   </>
                 )}
               </p>

@@ -153,7 +153,7 @@
     },
     {
       "crsCode": "WBY",
-      "stationName": "Wednesbury",
+      "stationName": "Wednesbury Great Western Street",
       "metroZone": 3,
       "parking": false,
       "stepFreeAccess": "full"
@@ -217,22 +217,8 @@
       "stepFreeAccess": "full"
     },
     {
-      "crsCode": "PSR",
-      "stationName": "Pipers Row",
-      "metroZone": 4,
-      "parking": false,
-      "stepFreeAccess": "full"
-    },
-    {
       "crsCode": "WSG",
       "stationName": "Wolverhampton St. George's",
-      "metroZone": 4,
-      "parking": false,
-      "stepFreeAccess": "full"
-    },
-    {
-      "crsCode": "WSN",
-      "stationName": "Wolverhampton Station",
       "metroZone": 4,
       "parking": false,
       "stepFreeAccess": "full"

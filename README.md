@@ -93,3 +93,19 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
       "parking": false,
       "stepFreeAccess": "full"
     },
+//stops to be removed
+
+ {
+      "crsCode": "PSR",
+      "stationName": "Pipers Row",
+      "metroZone": 4,
+      "parking": false,
+      "stepFreeAccess": "full"
+    },
+     {
+      "crsCode": "WSN",
+      "stationName": "Wolverhampton Station",
+      "metroZone": 4,
+      "parking": false,
+      "stepFreeAccess": "full"
+    }

@@ -36,6 +36,7 @@ const useMapControls = () => {
     { zone: 4, width: 1350, mobileHeight: 692, mobileY: 3362, x: 6235 },
   ];
   const zoneHeights = [-0, -600, -2100, -2500];
+  const zoneX = [-25, -700, -1100, -1400];
 
   const getZoneCoords = () => {
     // extract all unique zones from selected stationa and filter/remove undefined zones
@@ -101,7 +102,7 @@ const useMapControls = () => {
           };
           const mobileCoords = {
             y: getZoneCoords().mobileY - 80,
-            x: zoneCoords.x - offset / 2,
+            x: zoneX[getZoneCoords().zonesCount - 1],
             width: zoneCoords.width + offset,
             height: getZoneCoords().mobileHeight + 100,
           };

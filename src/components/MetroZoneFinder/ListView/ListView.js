@@ -48,7 +48,7 @@ const ListView = () => {
           <div className="wmnds-grid wmnds-grid--justify-between wmnds-grid--align-center">
             <div className="wmnds-col-1-1 wmnds-col-md-auto">
               <p className="wmnds-m-b-sm wmnds-m-t-sm">
-                View a list of all the train stations in each zone.
+                View a list of all the tram stops in each zone.
               </p>
             </div>
             <div className="wmnds-col-1-1 wmnds-col-md-auto">

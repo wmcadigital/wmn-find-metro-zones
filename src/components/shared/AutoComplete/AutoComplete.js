@@ -56,7 +56,7 @@ const AutoComplete = () => {
         {selectedStations.length > 2 && (
           <div className="wmnds-p-b-md">
             <div className={`wmnds-inset-text wmnds-m-b-sm wmnds-p-r-none ${s.addStation}`}>
-              <div className="wmnds-fe-label">Add another train station you travel to</div>
+              <div className="wmnds-fe-label">Add another tram stop you travel to</div>
               {selectedStations.slice(2).map((station, i) => (
                 <TrainAutoComplete
                   id={`autocomplete_add${i + 2}`}

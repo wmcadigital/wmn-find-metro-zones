@@ -58,7 +58,7 @@ const useAutoCompleteAPI = (queryId) => {
         // if no data, set error
         setErrorInfo({
           title: 'No results found',
-          message: 'Make sure you are looking for the right service, and try again.',
+          message: 'Make sure you are looking for the right stop, and try again.',
         });
       }
     },

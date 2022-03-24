@@ -210,11 +210,12 @@ const MetroZoneMap = () => {
             </g>
             <g id="Tram_line">
               <rect x="413.9" y="911.9" className="st1" width="472.6" height="24" />
-              <path
+              {/* to hide pipers row */}
+              {/* <path
                 className="st1"
                 d="M6929.6,1087.6h-246.2c-35.4,0-64.1-28.7-64.1-64.1v-47.4c0-22.2-18-40.2-40.2-40.2h-12.8v-15.1l5.9-8.8
 		c35.4,0,71,28.8,71,64.1v47.4c0,22.2,18,40.2,40.2,40.2h246.2L6929.6,1087.6z"
-              />
+              /> */}
               <rect x="885.8" y="911.9" className="st1" width="6045.8" height="23.9" />
             </g>
             <g id="Blobs">
@@ -637,7 +638,8 @@ const MetroZoneMap = () => {
                   />
                 </g>
               </g>
-              <g>
+              {/* dot point on svg */}
+              {/* <g>
                 <defs>
                   <rect
                     id="SVGID_00000159440609275907109380000009226432763683355544_"
@@ -668,8 +670,8 @@ const MetroZoneMap = () => {
                     style={{ overflow: 'visible' }}
                   />
                 </g>
-              </g>
-              <g>
+              </g> */}
+              {/* <g>
                 <defs>
                   <rect
                     id="SVGID_00000088112355099704894010000013255014971399677845_"
@@ -700,7 +702,7 @@ const MetroZoneMap = () => {
                     style={{ overflow: 'visible' }}
                   />
                 </g>
-              </g>
+              </g> */}
               <g>
                 <defs>
                   <rect
@@ -1182,7 +1184,7 @@ const MetroZoneMap = () => {
                 </g>
               </g>
             </g>
-            <g id="Wolverhampton_Station">
+            {/* <g id="Wolverhampton_Station">
               <path
                 className="st7"
                 d="M7022.9,1028.7h7.7l-10.7,38.5h-7.7l-8.8-27.4l-8.8,27.4h-7.8l-10.7-38.5h7.9l7.1,26.5l8.5-26.5h7.7l8.6,26.6
@@ -1286,7 +1288,7 @@ const MetroZoneMap = () => {
                 d="M7131.7,1123.3h-7.2v-26.7h7v3.3c1.7-2.6,4.6-4.1,7.7-4c6.6,0,9.7,4.7,9.7,10.6v16.8h-7.2v-15.6
 		c0-3-1.5-5.3-4.9-5.3c-3.1,0-5,2.4-5,5.5L7131.7,1123.3z"
               />
-            </g>
+            </g> */}
             <g id="Wolverhampton_St._George_s">
               <path
                 className="st7"
@@ -1417,7 +1419,7 @@ const MetroZoneMap = () => {
 		c0,1.3,1,2.1,2.4,2.4l3.8,0.8c5.3,1.1,7.9,4.3,7.9,8.2c0,4.3-3.4,8.8-10.4,8.8c-8,0-10.8-5.2-11.1-8.2L7062,865.4z"
               />
             </g>
-            <g id="Pipers_Row">
+            {/* <g id="Pipers_Row">
               <path
                 className="st7"
                 d="M6573.3,1149.4v14.5h-7.5v-38.5h14.4c7.6,0,12.6,5,12.6,12c0,6.9-5,12-12.6,12L6573.3,1149.4z M6579.3,1142.9
@@ -1467,7 +1469,7 @@ const MetroZoneMap = () => {
                 d="M6818.3,1137.2l5.7,17.2l4.9-17.2h7.2l-8.3,26.7h-7.2l-6.2-18.2l-6.1,18.2h-7.3l-8.5-26.7h7.6l4.9,17.1
 		l5.8-17.1H6818.3z"
               />
-            </g>
+            </g> */}
             <g id="The_Royal">
               <path className="st7" d="M6362.4,974.3v31.4h-7.5v-31.4h-12.1v-7.1h31.8v7.1H6362.4z" />
               <path
@@ -4014,11 +4016,12 @@ const MetroZoneMap = () => {
             </g>
             <g id="Tram_line">
               <rect x="501.5" y="182.5" className="st1" width="13.1" height="3639.5" />
-              <path
+              {/* to remove line */}
+              {/* <path
                 className="st1"
                 d="M514.4,3528.9c0,19.1-15.5,38.3-34.6,38.3h-25.6c-12,0-21.7,9.7-21.7,21.7v162.8h-12.9v-162.8
 		c0-19.1,15.5-34.6,34.6-34.6h25.6c12,0,21.7-9.7,21.7-21.7L514.4,3528.9z"
-              />
+              /> */}
             </g>
             <g id="Blobs">
               <g>
@@ -4442,7 +4445,7 @@ const MetroZoneMap = () => {
                   />
                 </g>
               </g>
-              <g>
+              {/* <g>
                 <defs>
                   <rect
                     id="SVGID_00000092417089248142422000000002548337316074859914_"
@@ -4475,7 +4478,7 @@ const MetroZoneMap = () => {
                     style={{ overFlow: 'visible' }}
                   />
                 </g>
-              </g>
+              </g> */}
               <g>
                 <defs>
                   <rect
@@ -4508,7 +4511,7 @@ const MetroZoneMap = () => {
                   />
                 </g>
               </g>
-              <g>
+              {/* <g>
                 <defs>
                   <rect
                     id="SVGID_00000177480171449155999270000004890700820815873714_"
@@ -4539,7 +4542,7 @@ const MetroZoneMap = () => {
                     style={{ overFlow: 'visible' }}
                   />
                 </g>
-              </g>
+              </g> */}
               <g>
                 <defs>
                   <rect
@@ -4992,7 +4995,7 @@ const MetroZoneMap = () => {
                 </g>
               </g>
             </g>
-            <g id="Wolverhampton_Station">
+            {/* <g id="Wolverhampton_Station">
               <path
                 className="st7"
                 d="M117.9,3714.7h5.6l-7.8,28.4H110l-6.5-20.2l-6.5,20.2h-5.8l-7.9-28.4h5.8l5.2,19.5l6.3-19.5h5.7l6.3,19.6
@@ -5099,7 +5102,7 @@ const MetroZoneMap = () => {
                 d="M363.5,3787h-5.3v-19.7h5.2v2.4c1.2-1.9,3.4-3.1,5.7-3c4.9,0,7.1,3.5,7.1,7.8v12.4h-5.3v-11.5
 		c0-2.2-1.1-3.9-3.6-3.9c-2.3,0-3.7,1.8-3.7,4.1L363.5,3787z"
               />
-            </g>
+            </g> */}
             <g id="Wolverhampton_St._George_s">
               <path
                 className="st7"
@@ -5233,7 +5236,7 @@ const MetroZoneMap = () => {
 		c0,1,0.7,1.6,1.8,1.8l2.8,0.6c3.9,0.8,5.8,3.2,5.8,6c0,3.2-2.5,6.5-7.6,6.5c-5.9,0-8-3.8-8.2-6.1L606.6,3928.8z"
               />
             </g>
-            <g id="Piper_s_Row">
+            {/* <g id="Piper_s_Row">
               <path
                 className="st7"
                 d="M175.4,3619.8v10.7h-5.5v-28.4h10.6c5.6,0,9.3,3.7,9.3,8.8s-3.7,8.8-9.3,8.8H175.4z M179.8,3615
@@ -5289,7 +5292,7 @@ const MetroZoneMap = () => {
                 d="M365,3610.8l4.2,12.7l3.6-12.7h5.3l-6.2,19.7h-5.3l-4.6-13.4l-4.5,13.4h-5.4l-6.2-19.7h5.6l3.6,12.6l4.3-12.6
 		H365z"
               />
-            </g>
+            </g> */}
             <g id="The_Royal">
               <path className="st7" d="M571.9,3475.9v23.1h-5.6v-23.1h-9v-5.2h23.5v5.2H571.9z" />
               <path

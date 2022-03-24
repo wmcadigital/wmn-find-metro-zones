@@ -60,7 +60,7 @@ const Result = () => {
                     {metroZoneSecond && (
                       <>
                         when travelling towards Library. It is in
-                        <strong>Zone {metroZoneSecond}</strong> when travelling towards
+                        <strong> Zone {metroZoneSecond}</strong> when travelling towards
                         Wolverhampton.
                       </>
                     )}

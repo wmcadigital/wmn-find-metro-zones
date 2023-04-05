@@ -18,7 +18,7 @@
 ### Dependencies
 
 - [Create React App](https://create-react-app.dev/docs/getting-started/)
-- [node-sass](https://www.npmjs.com/package/node-sass)
+- [sass](https://www.npmjs.com/package/sass)
 - [prop-types](https://www.npmjs.com/package/prop-types)
 - [react-app-polyfill](https://www.npmjs.com/package/react-app-polyfill)
 

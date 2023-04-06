@@ -7,7 +7,7 @@ import AccessIcon from '../Icon/AccessIcon';
 // Import styles
 import s from './Result.module.scss';
 
-const Result = () => {
+function Result() {
   const [autoCompleteState] = useContext(AutoCompleteContext);
   const { selectedStations, ticketMode } = autoCompleteState;
 
@@ -21,13 +21,15 @@ const Result = () => {
   // Get stations with full access from selected stations
   const fullAccessStations = stations
     .filter((item) => item.stepFreeAccess === 'full')
-    .map((item) => item.stationName);
+    .map((item) => item.stationDisplayName);
   // Get stations with partial access from selected stations
   const partAccessStations = stations
     .filter((item) => item.stepFreeAccess === 'partial')
-    .map((item) => item.stationName);
+    .map((item) => item.stationDisplayName);
   // Get stations with parking from selected stations
-  const parkingStations = stations.filter((item) => item.parking).map((item) => item.stationName);
+  const parkingStations = stations
+    .filter((item) => item.parking)
+    .map((item) => item.stationDisplayName);
   // Function to change arrays into readable sentence
   const arrayToSentence = (array) => {
     let sentence;
@@ -46,14 +48,14 @@ const Result = () => {
       {stations.length > 0 && (
         <>
           <div className="wmnds-m-b-lg">
-            {stations.map(({ id, stationName, metroZone, metroZoneSecond }, i) => (
+            {stations.map(({ id, stationDisplayName, metroZone, metroZoneSecond }, i) => (
               <p
                 key={id}
                 className={
                   stations.length === i + 1 && stations.length === 1 ? 'wmnds-m-b-none' : ''
                 }
               >
-                {stationName} is{' '}
+                {stationDisplayName} is{' '}
                 {metroZone < 5 && (
                   <>
                     in <strong>Zone {metroZone} </strong>{' '}
@@ -121,6 +123,6 @@ const Result = () => {
       )}
     </div>
   );
-};
+}
 
 export default Result;

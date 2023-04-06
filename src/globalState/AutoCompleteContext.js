@@ -9,7 +9,7 @@ import {
 
 export const AutoCompleteContext = createContext(); // Create context
 
-export const AutoCompleteProvider = (props) => {
+export function AutoCompleteProvider(props) {
   const { children } = props || {};
 
   // Get existing params which begin with 'query' and put them in an array
@@ -142,8 +142,9 @@ export const AutoCompleteProvider = (props) => {
 
   // Pass state and dispatch in context and make accessible to children it wraps
   return (
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AutoCompleteContext.Provider value={[autoCompleteState, autoCompleteDispatch]}>
       {children}
     </AutoCompleteContext.Provider>
   );
-};
+}

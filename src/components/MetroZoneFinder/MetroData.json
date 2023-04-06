@@ -1,6 +1,27 @@
 {
   "metroStationAccess": [
     {
+      "crsCode": "EDV",
+      "stationName": "Edgbaston Village",
+      "metroZone": 1,
+      "parking": false,
+      "stepFreeAccess": "full"
+    },
+    {
+      "crsCode": "FVW",
+      "stationName": "Five Ways",
+      "metroZone": 1,
+      "parking": false,
+      "stepFreeAccess": "full"
+    },
+    {
+      "crsCode": "BYP",
+      "stationName": "Brindleyplace",
+      "metroZone": 1,
+      "parking": false,
+      "stepFreeAccess": "full"
+    },
+    {
       "crsCode": "LIB",
       "stationName": "Library",
       "metroZone": 1,
@@ -44,7 +65,7 @@
     },
     {
       "crsCode": "SPL",
-      "stationName": "St Paul's",
+      "stationName": "St Pauls",
       "metroZone": 1,
       "parking": false,
       "stepFreeAccess": "full"

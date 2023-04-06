@@ -3,7 +3,7 @@ import { AutoCompleteContext } from 'globalState';
 // Import styles
 import s from './TrainAutoCompleteResult.module.scss';
 
-const TrainAutoCompleteResult = (props) => {
+function TrainAutoCompleteResult(props) {
   const { result, handleKeyDown, queryId } = props || {};
   const [, autoCompleteDispatch] = useContext(AutoCompleteContext);
 
@@ -20,6 +20,9 @@ const TrainAutoCompleteResult = (props) => {
       payload,
     });
   };
+
+  const tramstop = result.stationDisplayName;
+
   return (
     <li
       className="wmnds-autocomplete-suggestions__li"
@@ -31,9 +34,9 @@ const TrainAutoCompleteResult = (props) => {
       onClick={() => addSelectedStation()}
     >
       {/* Right section */}
-      <strong className={`${s.routeName}`}>{result.stationName}</strong>
+      <strong className={`${s.routeName}`}>{tramstop}</strong>
     </li>
   );
-};
+}
 
 export default TrainAutoCompleteResult;

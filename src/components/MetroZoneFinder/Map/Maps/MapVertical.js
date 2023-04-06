@@ -4,14 +4,14 @@ import { ReactSVGPanZoom, TOOL_PAN } from 'react-svg-pan-zoom';
 import MapControls from '../MapControls/MapControls';
 import useMapMethods from '../customHooks/useMapMethods';
 import useWindowHeightWidth from '../customHooks/useWindowHeightWidth';
-// import s from '../Map.module.scss';
+import s from '../Map.module.scss';
 
 function MapVertical() {
   const { mapState, mapDispatch } = useMapMethods();
   const [tool, setTool] = useState(TOOL_PAN);
   const Viewer = useRef(null);
   const { mapSize } = mapState;
-  // const { zone1, zone2, zone3, zone4 } = mapState.highlightedZones;
+  const { zone1, zone2, zone3, zone4 } = mapState.highlightedZones;
   const [autoCompleteState] = useContext(AutoCompleteContext);
   const { windowWidth } = useWindowHeightWidth();
 
@@ -89,7 +89,70 @@ function MapVertical() {
         onChangeValue={setValues}
       >
         <svg>
+          <style>
+            {
+              '.st0{clip-path:url(#SVGID_00000031925839151982136660000012007475375414382978_);}.st1{fill:#0075C9;}.st2{fill:#FFFFFF;}.st3{fill:#3D1152;}.st4{fill:#DED7D6;}.st5{fill:#221E20;}.st6{fill:#EEEAEA;}.st7{fill:#2D2A26;}.st8{fill:#1D1D1C;}'
+            }
+          </style>
+
           <symbol id="Interchange" viewBox="-28.4 -28.4 56.8 56.8">
+            <g id="Zone_4" data-name={zone4} className={zone4 ? s.zoneSelected : ''}>
+              <rect
+                x="6841.7998"
+                y="21.8"
+                className={`st6 ${zone4 ? s.selectedZone : ''}`}
+                width="1350.2002"
+                height="1341.5"
+              />
+              <path
+                fill="#221E20"
+                d="M7447.8999,331.8l72.3999-98.8h42.3999v105.3h28.2998v29.3h-28.2998v37h-33.1001v-37h-81.6001
+L7447.8999,331.8z M7529.5,267.2l-51.7998,71.2H7529.5V267.2z"
+              />
+            </g>
+            <g id="Zone_3" data-name={zone3} className={zone3 ? s.zoneSelected : ''}>
+              <rect
+                x="5214.7002"
+                y="21.8"
+                className={`st6 ${zone3 ? s.selectedZone : ''}`}
+                width="1619.2002"
+                height="1341.5"
+              />
+              <path
+                fill="#221E20"
+                d="M5993.3999,303.3l46.5-41.2h-77V233h119.8999v27.6L6037,300.1c25.8999,0.7,50.6001,19.9,50.6001,52.1
+c0,29.5-23.5,56.2-64.7002,56.2c-39.7002,0-63.3999-25.7-65.6001-54.2l32.3999-6.5c1,18.9,14.5,32,32.8999,32
+c19.8999,0,31-12.6,31-27.6c0-19.6-15.2998-27.8-30-27.8c-5.2002,0.1-10.2998,1.2-15,3.4L5993.3999,303.3z"
+              />
+            </g>
+            <g id="Zone_2" data-name={zone2} className={zone2 ? s.zoneSelected : ''}>
+              <rect
+                x="2658.1001"
+                y="21.8"
+                className={`st6 ${zone2 ? s.selectedZone : ''}`}
+                width="2548.6001"
+                height="1341.5"
+              />
+              <path
+                fill="#221E20"
+                d="M3868.7,296.7c-0.6001-3.5-1-7.1-1-10.7c0-29.8,22.3-56.7,61.5-56.7c38,0,60.8,24.9,60.8,54.2
+c0,22.5-12.3,40.7-32.8999,53.3l-33.3999,20.6c-7.3,4.8-13.8,9.9-16.2,17.9h83.5v29.3h-124.7c0.2-29.8,10.3999-53.3,40.7-71.7
+l28.1001-17.4c14.8-9.2,21.1001-18.9,21.1001-31.2c0-13.3-9-25.4-27.6001-25.4c-19.3999,0-28.6001,13.3-28.6001,30.3
+c0.1001,3.1,0.3999,6.2,1,9.2L3868.7,296.7z"
+              />
+            </g>
+            <g id="Zone_1" data-name={zone1} className={zone1 ? s.zoneSelected : ''}>
+              <rect
+                y="21.8"
+                className={`st6 ${zone1 ? s.selectedZone : ''}`}
+                width="2650.1001"
+                height="1341.5"
+              />
+              <path
+                fill="#221E20"
+                d="M1323.5,404.7V288h-41.1v-22.8c24.7-0.7,41.9-14.3,45.3-32.2h29.1v171.7H1323.5z"
+              />
+            </g>
             <g>
               <g>
                 <defs>
@@ -154,37 +217,52 @@ function MapVertical() {
               d="M-8.8,0c0,4.8,3.9,8.8,8.8,8.8s8.8-4,8.8-8.8S4.8-8.8,0-8.8S-8.8-4.8-8.8,0L-8.8,0"
             />
           </symbol>
-          <g id="Zone_4">
-            <rect y="3753.8" fill="#DED7D6" width="1216.1" height="691.9001" />
+          <g id="Zone_4" data-name={zone4} className={zone4 ? s.zoneSelected : ''}>
+            <rect
+              y="3361.6"
+              className={`st4 ${zone4 ? s.selectedZone : ''}`}
+              width="1216.1"
+              height="691.9"
+            />
             <path
-              fill="#221E20"
-              d="M985.6,4125l59.8-81.6001h35v87h23.4v24.2002h-23.4v30.6001H1053v-30.6001h-67.4V4125z M1053,4071.6001
-		l-42.8,58.7998h42.8V4071.6001z"
+              className="st5"
+              d="M985.6,3732.8l59.8-81.6h35v87h23.4v24.2h-23.4v30.6H1053v-30.6h-67.4L985.6,3732.8z M1053,3679.4l-42.8,58.8
+		h42.8L1053,3679.4z"
             />
           </g>
-          <g id="Zone_3">
-            <rect y="2865.7" fill="#EEEAEA" width="1216.1" height="879.9001" />
+          <g id="Zone_3" data-name={zone3} className={zone3 ? s.zoneSelected : ''}>
+            <rect
+              y="2473.5"
+              className={`st6 ${zone3 ? s.selectedZone : ''}`}
+              width="1216.1"
+              height="879.9"
+            />
             <path
-              fill="#221E20"
-              d="M1019.4,3307.6001l38.4-34h-63.6v-24h99v22.8l-37.8,32.6001c21.4,0.6001,41.8,16.3999,41.8,43
-		c0,24.3999-19.4,46.3999-53.4,46.3999c-32.8,0-52.4-21.2-54.2-44.8l26.8-5.3999c0.8,15.6001,12,26.3999,27.2,26.3999
-		c16.4,0,25.6-10.3999,25.6-22.8c0-16.2-12.6-23-24.8-23c-4.3,0.1001-8.5,1-12.4,2.8L1019.4,3307.6001z"
+              className="st5"
+              d="M1019.4,2915.4l38.4-34h-63.6v-24h99v22.8l-37.8,32.6c21.4,0.6,41.8,16.4,41.8,43c0,24.4-19.4,46.4-53.4,46.4
+		c-32.8,0-52.4-21.2-54.2-44.8l26.8-5.4c0.8,15.6,12,26.4,27.2,26.4c16.4,0,25.6-10.4,25.6-22.8c0-16.2-12.6-23-24.8-23
+		c-4.3,0.1-8.5,1-12.4,2.8L1019.4,2915.4z"
             />
           </g>
-          <g id="Zone_2">
-            <rect y="1470.4" fill="#DED7D6" width="1216.1" height="1387.1" />
+          <g id="Zone_2" data-name={zone2} className={zone2 ? s.zoneSelected : ''}>
+            <rect
+              y="1078.2"
+              className={`st4 ${zone2 ? s.selectedZone : ''}`}
+              width="1216.1"
+              height="1387.1"
+            />
             <path
-              fill="#221E20"
-              d="M994.5,2160.2c-0.5-2.8999-0.8-5.8-0.8-8.8c0-24.6001,18.4-46.8,50.8-46.8c31.4,0,50.2,20.6001,50.2,44.8
-		c0,18.6001-10.2,33.6001-27.2,44l-27.6,17c-6,4-11.4,8.2-13.4,14.8h69v24.2h-103c0.2-24.6001,8.6-44,33.6-59.2l23.2-14.3999
-		c12.2-7.6001,17.4-15.6001,17.4-25.8c0-11-7.4-21-22.8-21c-16,0-23.6,11-23.6,25c0.1,2.6001,0.3,5.1001,0.8,7.6001L994.5,2160.2z"
+              className="st5"
+              d="M994.5,1768c-0.5-2.9-0.8-5.8-0.8-8.8c0-24.6,18.4-46.8,50.8-46.8c31.4,0,50.2,20.6,50.2,44.8
+		c0,18.6-10.2,33.6-27.2,44l-27.6,17c-6,4-11.4,8.2-13.4,14.8h69v24.2h-103c0.2-24.6,8.6-44,33.6-59.2l23.2-14.4
+		c12.2-7.6,17.4-15.6,17.4-25.8c0-11-7.4-21-22.8-21c-16,0-23.6,11-23.6,25c0.1,2.6,0.3,5.1,0.8,7.6L994.5,1768z"
             />
           </g>
-          <g id="Zone_1">
-            <rect fill="#EEEAEA" width="1216.1" height="1462.2" />
+          <g id="Zone_1" data-name={zone1} className={zone1 ? s.zoneSelected : ''}>
+            <rect className={`st6 ${zone1 ? s.selectedZone : ''}`} width="1216.1" height="1070" />
             <path
-              fill="#221E20"
-              d="M1043.3,816.5v-96.4h-34v-18.8c20.4-0.6,34.6-11.8,37.4-26.6h24v141.8H1043.3z"
+              className="st5"
+              d="M1043.3,598.9v-96.4h-34v-18.8c20.4-0.6,34.6-11.8,37.4-26.6h24v141.8H1043.3z"
             />
           </g>
           <g id="Tram_line">
@@ -1737,7 +1815,7 @@ function MapVertical() {
               </g>
             </g>
           </g>
-          <g id="Wolverhampton_St._George_s">
+          <g id="Wolverhampton">
             <path
               fill="#2D2A26"
               d="M395.3,4259.1001h5.6l-7.8,28.3999h-5.7l-6.5-20.2002l-6.5,20.2002h-5.8l-7.9-28.3999h5.8l5.2,19.5
@@ -3789,7 +3867,7 @@ function MapVertical() {
 		c1.2-2.6,3.9-3.1,5.6-3.1c0.4,0,0.8,0,1.2,0.1L457.8,1482.6L457.8,1482.6z"
             />
           </g>
-          <g id="St._Paul_s">
+          <g id="St_Pauls">
             <path
               fill="#2D2A26"
               d="M574.1,1331.8c-0.4-2.5-2.7-4.2-5.2-4c-2.7,0-4.4,1.7-4.4,3.6c0,1.6,1,2.8,3.1,3.2l4,0.8
@@ -3837,7 +3915,7 @@ function MapVertical() {
 		c0,1,0.7,1.6,1.8,1.8l2.8,0.6c3.9,0.8,5.8,3.2,5.8,6c0,3.2-2.5,6.5-7.6,6.5c-5.9,0-8-3.8-8.2-6.1L709.2,1345.4z"
             />
           </g>
-          <g id="St._Chads">
+          <g id="St_Chads">
             <path
               fill="#2D2A26"
               d="M300,1203.9c-0.4-2.5-2.7-4.2-5.2-4c-2.7,0-4.4,1.7-4.4,3.6c0,1.6,1,2.8,3.1,3.2l4,0.8

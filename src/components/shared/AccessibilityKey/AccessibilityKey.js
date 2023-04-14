@@ -10,7 +10,7 @@ import Checkbox from '../Checkbox/Checkbox';
 
 import s from './AccessibilityKey.module.scss';
 
-const AccessibilityKey = ({ mapView }) => {
+function AccessibilityKey({ mapView }) {
   const [mapState, mapDispatch] = useContext(MapContext);
   const [showKey, setShowKey] = useState(!mapView);
 
@@ -117,7 +117,7 @@ const AccessibilityKey = ({ mapView }) => {
       {showKey && Key}
     </div>
   );
-};
+}
 
 AccessibilityKey.propTypes = {
   mapView: PropTypes.bool,

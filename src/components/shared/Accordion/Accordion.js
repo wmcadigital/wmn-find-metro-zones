@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../Icon/Icon';
 
-const Accordion = ({ id, children, heading, isOpen, handleClick }) => {
+function Accordion({ id, children, heading, isOpen, handleClick }) {
   return (
     <div className={`wmnds-accordion ${isOpen && 'wmnds-is--open'}`}>
       <button
@@ -26,7 +26,7 @@ const Accordion = ({ id, children, heading, isOpen, handleClick }) => {
       </div>
     </div>
   );
-};
+}
 
 Accordion.propTypes = {
   id: PropTypes.string.isRequired,

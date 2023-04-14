@@ -14,13 +14,13 @@ function ProviderComposer({ contexts, children }) {
   );
 }
 
-const ContextProvider = (props) => {
+function ContextProvider(props) {
   const { children } = props || {};
   return (
     <ProviderComposer contexts={[<AutoCompleteProvider />, <MapContextProvider />]}>
       {children}
     </ProviderComposer>
   );
-};
+}
 
 export default ContextProvider;

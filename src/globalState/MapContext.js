@@ -4,7 +4,7 @@ import { getSearchParam, setSearchParam } from 'globalState/helpers/URLSearchPar
 
 export const MapContext = createContext(); // Create context
 
-export const MapContextProvider = (props) => {
+export function MapContextProvider(props) {
   const { children } = props || {};
 
   // Set intial state
@@ -101,4 +101,4 @@ export const MapContextProvider = (props) => {
 
   // Pass state and dispatch in context and make accessible to children it wraps
   return <MapContext.Provider value={[mapState, mapDispatch]}>{children}</MapContext.Provider>;
-};
+}

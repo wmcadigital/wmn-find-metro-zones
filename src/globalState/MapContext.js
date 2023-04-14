@@ -100,5 +100,6 @@ export function MapContextProvider(props) {
   const [mapState, mapDispatch] = useReducer(reducer, initialState);
 
   // Pass state and dispatch in context and make accessible to children it wraps
+  // eslint-disable-next-line react/jsx-no-constructed-context-values
   return <MapContext.Provider value={[mapState, mapDispatch]}>{children}</MapContext.Provider>;
 }

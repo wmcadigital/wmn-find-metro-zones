@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PandR from 'components/shared/PandR/PandR';
 import Button from '../../shared/Button/Button';
-import AccessIcon from '../../shared/Icon/AccessIcon';
 import Icon from '../../shared/Icon/Icon';
 // import AccessibilityKey from '../../shared/AccessibilityKey/AccessibilityKey';
 import Accordion from '../../shared/Accordion/Accordion';
@@ -11,7 +10,7 @@ import s from './ListView.module.scss';
 // import railData from '../RailData.json';
 import metroData from '../MetroData.json';
 
-const ListView = () => {
+function ListView() {
   const [accordions, setAccordions] = useState([
     { name: 'Zone 1', open: false },
     { name: 'Zone 2', open: false },
@@ -110,23 +109,6 @@ const ListView = () => {
                         {station.metroZoneSecond
                           ? `${station.stationName} (also in Zone ${station.metroZoneSecond})`
                           : station.stationName}
-                        {station.stepFreeAccess && (
-                          <>
-                            {station.stepFreeAccess === 'full' ? (
-                              <>
-                                {' '}
-                                <span className={s.srOnly}>which has full step free access</span>
-                                {/* <AccessIcon className="wmnds-m-l-xsm" /> */}
-                              </>
-                            ) : (
-                              <>
-                                {' '}
-                                <span className={s.srOnly}>which has partial step free access</span>
-                                <AccessIcon type="part" className="wmnds-m-l-sm" />
-                              </>
-                            )}
-                          </>
-                        )}
                         {station.parking && (
                           <>
                             <span className={s.srOnly}>
@@ -157,6 +139,6 @@ const ListView = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ListView;

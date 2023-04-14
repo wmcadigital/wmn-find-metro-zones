@@ -1,8 +1,33 @@
 {
   "metroStationAccess": [
     {
+      "crsCode": "EDV",
+      "stationName": "Edgbaston Village",
+      "stationDisplayName": "Edgbaston Village",
+      "metroZone": 1,
+      "parking": false,
+      "stepFreeAccess": "full"
+    },
+    {
+      "crsCode": "FVW",
+      "stationName": "Five Ways",
+      "stationDisplayName": "Five Ways",
+      "metroZone": 1,
+      "parking": false,
+      "stepFreeAccess": "full"
+    },
+    {
+      "crsCode": "BYP",
+      "stationName": "Brindleyplace",
+      "stationDisplayName": "Brindleyplace",
+      "metroZone": 1,
+      "parking": false,
+      "stepFreeAccess": "full"
+    },
+    {
       "crsCode": "LIB",
       "stationName": "Library",
+      "stationDisplayName": "Library",
       "metroZone": 1,
       "parking": false,
       "stepFreeAccess": "full"
@@ -10,6 +35,7 @@
     {
       "crsCode": "TNH",
       "stationName": "Town Hall",
+      "stationDisplayName": "Town Hall",
       "metroZone": 1,
       "parking": false,
       "stepFreeAccess": "full"
@@ -17,6 +43,7 @@
     {
       "crsCode": "GDC",
       "stationName": "Grand Central",
+      "stationDisplayName": "Grand Central",
       "metroZone": 1,
       "parking": false,
       "stepFreeAccess": "full"
@@ -24,6 +51,7 @@
     {
       "crsCode": "CRS",
       "stationName": "Corporation Street",
+      "stationDisplayName": "Corporation Street",
       "metroZone": 1,
       "parking": false,
       "stepFreeAccess": "full"
@@ -31,6 +59,7 @@
     {
       "crsCode": "BLS",
       "stationName": "Bull Street",
+      "stationDisplayName": "Bull Street",
       "metroZone": 1,
       "parking": false,
       "stepFreeAccess": "full"
@@ -38,13 +67,15 @@
     {
       "crsCode": "SCD",
       "stationName": "St Chads",
+      "stationDisplayName": "St Chads",
       "metroZone": 1,
       "parking": false,
       "stepFreeAccess": "full"
     },
     {
       "crsCode": "SPL",
-      "stationName": "St Paul's",
+      "stationName": "St Pauls",
+      "stationDisplayName": "St Paul's",
       "metroZone": 1,
       "parking": false,
       "stepFreeAccess": "full"
@@ -52,6 +83,7 @@
     {
       "crsCode": "JYQ1",
       "stationName": "Jewellery Quarter",
+      "stationDisplayName": "Jewellery Quarter",
       "metroZone": 1,
       "metroZoneSecond": 2,
       "parking": false,
@@ -60,6 +92,7 @@
     {
       "crsCode": "JYQ2",
       "stationName": "Jewellery Quarter",
+      "stationDisplayName": "Jewellery Quarter",
       "metroZone": 2,
       "metroZoneSecond": 1,
       "parking": false,
@@ -67,7 +100,8 @@
     },
     {
       "crsCode": "SBR",
-      "stationName": "Soho Benson Road",
+      "stationName": "Soho",
+      "stationDisplayName": "Soho Benson Road",
       "metroZone": 2,
       "parking": false,
       "stepFreeAccess": "full"
@@ -75,13 +109,15 @@
     {
       "crsCode": "WNG",
       "stationName": "Winson Green",
+      "stationDisplayName": "Winson Green",
       "metroZone": 2,
       "parking": false,
       "stepFreeAccess": "full"
     },
     {
       "crsCode": "HBS",
-      "stationName": "Handsworth Booth Street",
+      "stationName": "Handsworth",
+      "stationDisplayName": "Handsworth",
       "metroZone": 2,
       "parking": false,
       "stepFreeAccess": "full"
@@ -89,6 +125,7 @@
     {
       "crsCode": "THS",
       "stationName": "The Hawthorns",
+      "stationDisplayName": "The Hawthorns",
       "metroZone": 2,
       "parking": true,
       "stepFreeAccess": "full"
@@ -96,6 +133,7 @@
     {
       "crsCode": "TKP",
       "stationName": "Kenrick Park",
+      "stationDisplayName": "Kenrick Park",
       "metroZone": 2,
       "parking": false,
       "stepFreeAccess": "full"
@@ -103,13 +141,15 @@
     {
       "crsCode": "TYW",
       "stationName": "Trinity Way",
+      "stationDisplayName": "Trinity Way",
       "metroZone": 2,
       "parking": false,
       "stepFreeAccess": "full"
     },
     {
       "crsCode": "WBC",
-      "stationName": "West Bromwich Central",
+      "stationName": "West Bromwich",
+      "stationDisplayName": "West Bromwich",
       "metroZone": 2,
       "parking": false,
       "stepFreeAccess": "full"
@@ -117,6 +157,7 @@
     {
       "crsCode": "LGR",
       "stationName": "Lodge Road",
+      "stationDisplayName": "Lodge Road",
       "metroZone": 2,
       "parking": false,
       "stepFreeAccess": "full"
@@ -124,6 +165,7 @@
     {
       "crsCode": "DMS",
       "stationName": "Dartmouth Street",
+      "stationDisplayName": "Dartmouth Street",
       "metroZone": 2,
       "parking": false,
       "stepFreeAccess": "full"
@@ -131,6 +173,7 @@
     {
       "crsCode": "DYS",
       "stationName": "Dudley Street",
+      "stationDisplayName": "Dudley Street",
       "metroZone": 2,
       "parking": false,
       "stepFreeAccess": "full"
@@ -138,6 +181,7 @@
     {
       "crsCode": "BKL2",
       "stationName": "Black Lake",
+      "stationDisplayName": "Black Lake",
       "metroZone": 2,
       "metroZoneSecond": 3,
       "parking": true,
@@ -146,6 +190,7 @@
     {
       "crsCode": "BKL3",
       "stationName": "Black Lake",
+      "stationDisplayName": "Black Lake",
       "metroZone": 3,
       "metroZoneSecond": 2,
       "parking": true,
@@ -153,7 +198,8 @@
     },
     {
       "crsCode": "WBY",
-      "stationName": "Wednesbury Great Western Street",
+      "stationName": "Wednesbury",
+      "stationDisplayName": "Wednesbury Great Western Street",
       "metroZone": 3,
       "parking": false,
       "stepFreeAccess": "full"
@@ -161,6 +207,7 @@
     {
       "crsCode": "WBP",
       "stationName": "Wednesbury Parkway",
+      "stationDisplayName": "Wednesbury Parkway",
       "metroZone": 3,
       "parking": true,
       "stepFreeAccess": "full"
@@ -168,6 +215,7 @@
     {
       "crsCode": "BYL",
       "stationName": "Bradley Lane",
+      "stationDisplayName": "Bradley Lane",
       "metroZone": 3,
       "parking": true,
       "stepFreeAccess": "full"
@@ -175,6 +223,7 @@
     {
       "crsCode": "LXD",
       "stationName": "Loxdale",
+      "stationDisplayName": "Loxdale",
       "metroZone": 3,
       "parking": false,
       "stepFreeAccess": "full"
@@ -182,6 +231,7 @@
     {
       "crsCode": "BNC",
       "stationName": "Bilston Central",
+      "stationDisplayName": "Bilston Central",
       "metroZone": 3,
       "parking": false,
       "stepFreeAccess": "full"
@@ -189,6 +239,7 @@
     {
       "crsCode": "TCS",
       "stationName": "The Crescent",
+      "stationDisplayName": "The Crescent",
       "metroZone": 3,
       "parking": false,
       "stepFreeAccess": "full"
@@ -196,6 +247,7 @@
     {
       "crsCode": "PTF3",
       "stationName": "Priestfield",
+      "stationDisplayName": "Priestfield",
       "metroZone": 3,
       "metroZoneSecond": 4,
       "parking": true,
@@ -204,6 +256,7 @@
     {
       "crsCode": "PTF4",
       "stationName": "Priestfield",
+      "stationDisplayName": "Priestfield",
       "metroZone": 4,
       "metroZoneSecond": 3,
       "parking": true,
@@ -212,13 +265,15 @@
     {
       "crsCode": "TRL",
       "stationName": "The Royal",
+      "stationDisplayName": "The Royal",
       "metroZone": 4,
       "parking": false,
       "stepFreeAccess": "full"
     },
     {
       "crsCode": "WSG",
-      "stationName": "Wolverhampton St. George's",
+      "stationName": "Wolverhampton",
+      "stationDisplayName": "Wolverhampton St. George's",
       "metroZone": 4,
       "parking": false,
       "stepFreeAccess": "full"

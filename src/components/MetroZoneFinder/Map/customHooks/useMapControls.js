@@ -30,10 +30,10 @@ const useMapControls = () => {
   );
 
   const zoneSpecs = [
-    { zone: 1, width: 2044, mobileHeight: 1070, mobileY: 0, x: 0 },
-    { zone: 2, width: 2549, mobileHeight: 1387, mobileY: 1078, x: 2052 },
-    { zone: 3, width: 1619, mobileHeight: 880, mobileY: 2473, x: 4608 },
-    { zone: 4, width: 1350, mobileHeight: 692, mobileY: 3362, x: 6235 },
+    { zone: 1, width: 3600, mobileHeight: 1462, mobileY: 0, x: 150 },
+    { zone: 2, width: 2850, mobileHeight: 1387, mobileY: 1200, x: 2500 },
+    { zone: 3, width: 1950, mobileHeight: 880, mobileY: 2473, x: 5050 },
+    { zone: 4, width: 1550, mobileHeight: 692, mobileY: 3362, x: 6650 },
   ];
   const zoneHeights = [-0, -600, -2100, -2500];
   const zoneX = [-25, -700, -1100, -1400];

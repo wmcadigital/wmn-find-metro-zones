@@ -3,7 +3,7 @@ import Icon from '../../../shared/Icon/Icon';
 import s from './MapControls.module.scss';
 import useMapControls from '../customHooks/useMapControls';
 
-const MapControls = () => {
+function MapControls() {
   const { fitToViewer, zoomInCenter, zoomOutCenter } = useMapControls();
   return (
     <div className={s.mapControls}>
@@ -18,6 +18,6 @@ const MapControls = () => {
       </button>
     </div>
   );
-};
+}
 
 export default MapControls;

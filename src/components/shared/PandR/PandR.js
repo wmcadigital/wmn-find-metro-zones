@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Icon from '../Icon/Icon';
 import s from './PandR.module.scss';
 
-const PandR = ({ mapView }) => {
+function PandR({ mapView }) {
   return (
     <div className={mapView ? s.mapViewWrapper : s.listViewWrapper}>
       {!mapView && <h3 className="wmnds-p-md">Key</h3>}
@@ -30,7 +30,7 @@ const PandR = ({ mapView }) => {
       </div>
     </div>
   );
-};
+}
 
 PandR.propTypes = {
   mapView: PropTypes.bool,

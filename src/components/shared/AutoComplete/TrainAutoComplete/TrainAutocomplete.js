@@ -13,7 +13,7 @@ import SelectedServiceHeader from '../SelectedServiceHeader/SelectedServiceHeade
 import useHandleAutoCompleteKeys from '../customHooks/useHandleAutoCompleteKeys';
 import useAutoCompleteAPI from '../customHooks/useAutoCompleteAPI';
 
-const TrainAutoComplete = ({ id, label, queryId }) => {
+function TrainAutoComplete({ id, label, queryId }) {
   const [autoCompleteState, autoCompleteDispatch] = useContext(AutoCompleteContext);
 
   const resultsList = useRef(null);
@@ -35,6 +35,7 @@ const TrainAutoComplete = ({ id, label, queryId }) => {
       resArr.push({
         crsCode: item.crsCode,
         stationName: item.stationName,
+        stationDisplayName: item.stationDisplayName,
         metroZone: item.metroZone,
         metroZoneSecond: item.metroZoneSecond,
         parking: item.parking,
@@ -118,7 +119,7 @@ const TrainAutoComplete = ({ id, label, queryId }) => {
       )}
     </div>
   );
-};
+}
 
 // PropTypes
 TrainAutoComplete.propTypes = {

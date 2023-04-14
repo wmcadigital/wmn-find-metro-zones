@@ -4,7 +4,7 @@ import Icon from './Icon';
 import s from './Icon.module.scss';
 
 // Customised icon which includes circular background for accessibility icon
-const AccessIcon = ({ type, size, className, iconClassName }) => {
+function AccessIcon({ type, size, className, iconClassName }) {
   return (
     <div
       className={`${s.accessIcon} ${type === 'full' ? s.fullAccess : s.partAccess} ${className}`}
@@ -13,7 +13,7 @@ const AccessIcon = ({ type, size, className, iconClassName }) => {
       <Icon iconName="general-disabled" className={iconClassName || ''} />
     </div>
   );
-};
+}
 
 AccessIcon.propTypes = {
   type: PropTypes.oneOf(['full', 'part']),

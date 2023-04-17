@@ -140,6 +140,11 @@ export function AutoCompleteProvider(props) {
   // Set up reducer using reducer logic and initialState by default
   const [autoCompleteState, autoCompleteDispatch] = useReducer(reducer, initialState);
 
+  // const fireBaseProviderValue = useMemo(
+  //   () => ({ autoCompleteState, autoCompleteDispatch }),
+  //   [autoCompleteState, autoCompleteDispatch]
+  // );
+
   // Pass state and dispatch in context and make accessible to children it wraps
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values

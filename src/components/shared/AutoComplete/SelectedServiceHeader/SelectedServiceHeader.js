@@ -17,6 +17,7 @@ function SelectedServiceHeader({ autoCompleteState, autoCompleteDispatch, queryI
     resetMapStation(selectedService, autoCompleteState.selectedStations);
     autoCompleteDispatch();
   };
+
   return (
     <>
       {/* Close disruption box */}
@@ -34,7 +35,8 @@ function SelectedServiceHeader({ autoCompleteState, autoCompleteDispatch, queryI
 
 // PropTypes
 SelectedServiceHeader.propTypes = {
-  autoCompleteState: PropTypes.objectOf(PropTypes).isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  autoCompleteState: PropTypes.objectOf(PropTypes.any).isRequired,
   autoCompleteDispatch: PropTypes.func.isRequired,
   queryId: PropTypes.number.isRequired,
 };

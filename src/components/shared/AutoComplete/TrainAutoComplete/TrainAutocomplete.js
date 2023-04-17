@@ -30,7 +30,7 @@ function TrainAutoComplete({ id, label, queryId }) {
 
   const resArr = [];
   filteredResults.forEach((item) => {
-    const i = resArr.findIndex((x) => x.stationName === item.stationName);
+    const i = resArr.findIndex((x) => x.stationDisplayName === item.stationDisplayName);
     if (i <= -1) {
       resArr.push({
         crsCode: item.crsCode,

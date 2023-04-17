@@ -107,8 +107,8 @@ function ListView() {
                     {zoneStations.map((station) => (
                       <li key={station.crsCode} className={s.accordionListItem}>
                         {station.metroZoneSecond
-                          ? `${station.stationName} (also in Zone ${station.metroZoneSecond})`
-                          : station.stationName}
+                          ? `${station.stationDisplayName} (also in Zone ${station.metroZoneSecond})`
+                          : station.stationDisplayName}
                         {station.parking && (
                           <>
                             <span className={s.srOnly}>

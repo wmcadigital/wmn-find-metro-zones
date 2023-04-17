@@ -71,7 +71,7 @@ const useAutoCompleteAPI = (queryId) => {
     setLoading(true);
     const response = query
       ? metroData.metroStationAccess.filter((station) => {
-          return station.stationName.toLowerCase().includes(query.trim().toLowerCase());
+          return station.stationDisplayName.toLowerCase().includes(query.trim().toLowerCase());
         })
       : metroData.metroStationAccess;
     handleAutoCompleteApiResponse(response);

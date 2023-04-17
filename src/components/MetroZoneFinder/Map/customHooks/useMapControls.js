@@ -155,8 +155,10 @@ const useMapControls = () => {
       const svg = mapRef.current.ViewerDOM; // Find svg node
       metroData.metroStationAccess.forEach((station) => {
         const group =
-          svg.querySelector(`[data-name="${station.stationName}"]`) ||
-          svg.querySelector(`#${station.stationName.replace(' ', '_').replace(/[^\w-]+/g, '')}`);
+          svg.querySelector(`[data-name="${station.stationDisplayName}"]`) ||
+          svg.querySelector(
+            `#${station.stationDisplayName.replace(' ', '_').replace(/[^\w-]+/g, '')}`
+          );
         if (group) {
           if (
             (full && station.stepFreeAccess === 'full') ||
@@ -177,11 +179,13 @@ const useMapControls = () => {
     if (mapRef?.current && mapState.mapView) {
       const svg = mapRef.current.ViewerDOM; // Find svg node
       // Find related group in svg map
-      if (station && station.stationName) {
+      if (station && station.stationDisplayName) {
         // Find svg <g> related to station name
         const svgGroup =
-          svg.querySelector(`[data-name="${station.stationName}"]`) ||
-          svg.querySelector(`#${station.stationName.replace(' ', '_').replace(/[^\w-]+/g, '')}`); // regex removes whitespace and non word chars for id search
+          svg.querySelector(`[data-name="${station.stationDisplayName}"]`) ||
+          svg.querySelector(
+            `#${station.stationDisplayName.replace(' ', '_').replace(/[^\w-]+/g, '')}`
+          ); // regex removes whitespace and non word chars for id search
 
         // If group is found remove text background from svg map
         if (svgGroup) {

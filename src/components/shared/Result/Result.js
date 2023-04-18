@@ -11,6 +11,8 @@ function Result() {
   const [autoCompleteState] = useContext(AutoCompleteContext);
   const { selectedStations, ticketMode } = autoCompleteState;
 
+  console.log(autoCompleteState);
+
   // Get selected stations that have an id
   const stations = selectedStations.filter((item) => item.id !== null);
 
@@ -44,6 +46,7 @@ function Result() {
   };
 
   console.log(stations);
+  console.log(stations.length);
 
   return (
     <div>

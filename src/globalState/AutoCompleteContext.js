@@ -48,7 +48,6 @@ export function AutoCompleteProvider(props) {
 
   // Set up a reducer so we can change state based on centralised logic here
   const reducer = (state, action) => {
-    console.log(state);
     // Update the query to what the user has typed
     switch (action.type) {
       case 'UPDATE_QUERY': {
@@ -138,10 +137,10 @@ export function AutoCompleteProvider(props) {
             delSearchParam('selectedStation0');
             delSearchParam('selectedStation1');
           }
+          return initialState;
         });
         return {
           ...initialState,
-          mapRef: state.mapRef,
         };
       // Default should return intial state if error
       default:

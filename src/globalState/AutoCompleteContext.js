@@ -133,9 +133,10 @@ export function AutoCompleteProvider(props) {
       case 'RESET_SELECTED_SERVICES':
         getAllSearchParams().forEach((param) => {
           if (param.name !== 'ticketSearch') {
-            delSearchParam(param.name);
             delSearchParam('query0');
             delSearchParam('query1');
+            delSearchParam('selectedStation0');
+            delSearchParam('selectedStation1');
           }
         });
         return {

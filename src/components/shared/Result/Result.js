@@ -11,6 +11,7 @@ function Result() {
   const [autoCompleteState] = useContext(AutoCompleteContext);
   const { selectedStations, ticketMode } = autoCompleteState;
 
+  console.log('result');
   console.log(autoCompleteState);
 
   // Get selected stations that have an id

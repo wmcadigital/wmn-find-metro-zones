@@ -43,6 +43,8 @@ function Result() {
     return sentence;
   };
 
+  console.log(stations);
+
   return (
     <div>
       {stations.length > 0 && (

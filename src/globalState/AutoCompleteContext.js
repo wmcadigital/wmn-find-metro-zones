@@ -1,3 +1,4 @@
+/* eslint-disable react/function-component-definition */
 import React, { useReducer, createContext } from 'react';
 // Import Helper functions
 import {
@@ -9,7 +10,7 @@ import {
 
 export const AutoCompleteContext = createContext(); // Create context
 
-export function AutoCompleteProvider(props) {
+export const AutoCompleteProvider = (props) => {
   const { children } = props || {};
 
   // Get existing params which begin with 'query' and put them in an array
@@ -37,14 +38,6 @@ export function AutoCompleteProvider(props) {
       ...additionalStations,
     ],
   };
-
-  // const query0 = getSearchParam('query0');
-
-  // if (query0 !== '') {
-  //   initialState = {
-  //     queries: ['', ''],
-  //   };
-  // }
 
   // Set up a reducer so we can change state based on centralised logic here
   const reducer = (state, action) => {
@@ -132,15 +125,12 @@ export function AutoCompleteProvider(props) {
       case 'RESET_SELECTED_SERVICES':
         getAllSearchParams().forEach((param) => {
           if (param.name !== 'ticketSearch') {
-            delSearchParam('query0');
-            delSearchParam('query1');
-            delSearchParam('selectedStation0');
-            delSearchParam('selectedStation1');
+            delSearchParam(param.name);
           }
-          return initialState;
         });
         return {
           ...initialState,
+          mapRef: state.mapRef,
         };
       // Default should return intial state if error
       default:
@@ -158,4 +148,4 @@ export function AutoCompleteProvider(props) {
       {children}
     </AutoCompleteContext.Provider>
   );
-}
+};

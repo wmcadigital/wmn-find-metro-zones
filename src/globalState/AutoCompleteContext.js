@@ -38,6 +38,14 @@ export function AutoCompleteProvider(props) {
     ],
   };
 
+  // const query0 = getSearchParam('query0');
+
+  // if (query0 !== '') {
+  //   initialState = {
+  //     queries: ['', ''],
+  //   };
+  // }
+
   // Set up a reducer so we can change state based on centralised logic here
   const reducer = (state, action) => {
     console.log(state);
@@ -126,6 +134,8 @@ export function AutoCompleteProvider(props) {
         getAllSearchParams().forEach((param) => {
           if (param.name !== 'ticketSearch') {
             delSearchParam(param.name);
+            delSearchParam('query0');
+            delSearchParam('query1');
           }
         });
         return {

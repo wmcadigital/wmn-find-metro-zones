@@ -33,6 +33,7 @@ const setSearchParam = (name, val) => {
 // Function for deleting a search param in the URL
 const delSearchParam = (name) => {
   url.searchParams.delete(name); // Delete the search param for the name provided
+  console.log(name);
   window.history.pushState({}, '', url.href); // Then push the updated search params back to the URL
 };
 

@@ -45,9 +45,6 @@ function Result() {
     return sentence;
   };
 
-  console.log(stations);
-  console.log(stations.length);
-
   return (
     <div>
       {stations.length > 0 && (

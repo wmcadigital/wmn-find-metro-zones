@@ -29,53 +29,55 @@ const useMapControls = () => {
     [mapRef]
   );
 
+  const zoneSpecs = [
+    { zone: 1, width: 2044, mobileHeight: 1070, mobileY: 0, x: 0 },
+    { zone: 2, width: 2549, mobileHeight: 1387, mobileY: 1078, x: 2052 },
+    { zone: 3, width: 1619, mobileHeight: 880, mobileY: 2473, x: 4608 },
+    { zone: 4, width: 1350, mobileHeight: 692, mobileY: 3362, x: 6235 },
+  ];
+  const zoneHeights = [-0, -600, -2100, -2500];
+  const zoneX = [-25, -700, -1100, -1400];
+
+  const getZoneCoords = () => {
+    // extract all unique zones from selected stationa and filter/remove undefined zones
+    const getSelectedZones = [
+      ...new Set(
+        autoCompleteState.selectedStations
+          .map((station) => station.metroZone)
+          .filter((zone) => zone)
+      ),
+    ];
+
+    // get lowest zone number index
+    const lowestZone = Math.min(...getSelectedZones) - 1;
+
+    // get highest zone number index
+    const highestZone = Math.max(...getSelectedZones);
+
+    // get all width of zone between highest zone number and lowest zone number
+    // const getSelectedZonesRangeWidths = zoneWidths.slice(lowestZone, highestZone);
+    const getSelectedZonesRange = zoneSpecs.slice(lowestZone, highestZone);
+    // accumlate all width ranges
+    const sumSelectedZonesRangeWidths = getSelectedZonesRange
+      .map((zone) => zone.width)
+      .reduce((prevZone, currZone) => prevZone + currZone, 0);
+    // accumlate all heights for mobile ranges
+
+    const sumSelectedZonesRangeHeight = getSelectedZonesRange
+      .map((zone) => zone.mobileHeight)
+      .reduce((prevZone, currZone) => prevZone + currZone, 0);
+
+    return {
+      width: sumSelectedZonesRangeWidths,
+      x: getSelectedZonesRange[0].x,
+      mobileY: getSelectedZonesRange[0].mobileY,
+      mobileHeight: sumSelectedZonesRangeHeight,
+      zonesCount: getSelectedZonesRange.length,
+    };
+  };
+
   // eslint-disable-next-line consistent-return
   useEffect(() => {
-    const zoneHeights = [-0, -600, -2100, -2500];
-    const zoneX = [-25, -700, -1100, -1400];
-    const zoneSpecs = [
-      { zone: 1, width: 3600, mobileHeight: 1462, mobileY: 0, x: 150 },
-      { zone: 2, width: 2850, mobileHeight: 1387, mobileY: 1200, x: 2500 },
-      { zone: 3, width: 1950, mobileHeight: 880, mobileY: 2473, x: 5050 },
-      { zone: 4, width: 1550, mobileHeight: 692, mobileY: 3362, x: 6650 },
-    ];
-    const getZoneCoords = () => {
-      // extract all unique zones from selected stationa and filter/remove undefined zones
-      const getSelectedZones = [
-        ...new Set(
-          autoCompleteState.selectedStations
-            .map((station) => station.metroZone)
-            .filter((zone) => zone)
-        ),
-      ];
-
-      // get lowest zone number index
-      const lowestZone = Math.min(...getSelectedZones) - 1;
-
-      // get highest zone number index
-      const highestZone = Math.max(...getSelectedZones);
-
-      // get all width of zone between highest zone number and lowest zone number
-      // const getSelectedZonesRangeWidths = zoneWidths.slice(lowestZone, highestZone);
-      const getSelectedZonesRange = zoneSpecs.slice(lowestZone, highestZone);
-      // accumlate all width ranges
-      const sumSelectedZonesRangeWidths = getSelectedZonesRange
-        .map((zone) => zone.width)
-        .reduce((prevZone, currZone) => prevZone + currZone, 0);
-      // accumlate all heights for mobile ranges
-
-      const sumSelectedZonesRangeHeight = getSelectedZonesRange
-        .map((zone) => zone.mobileHeight)
-        .reduce((prevZone, currZone) => prevZone + currZone, 0);
-
-      return {
-        width: sumSelectedZonesRangeWidths,
-        x: getSelectedZonesRange[0].x,
-        mobileY: getSelectedZonesRange[0].mobileY,
-        mobileHeight: sumSelectedZonesRangeHeight,
-        zonesCount: getSelectedZonesRange.length,
-      };
-    };
     let mounted = true;
     if (mapRef?.current && mapState.mapView) {
       const fitZoneToViewer = (zone, offset) => {
@@ -140,14 +142,7 @@ const useMapControls = () => {
         window.removeEventListener('resize', resizeMap);
       };
     }
-  }, [
-    mapRef,
-    zoomSelection,
-    mapState.highlightedZones,
-    mapState.mapView,
-    windowWidth,
-    autoCompleteState.selectedStations,
-  ]);
+  }, [mapRef, zoomSelection, mapState.highlightedZones, mapState.mapView]);
 
   useEffect(() => {
     const { full, partial, parking } = mapState.accessVisibility;
@@ -155,10 +150,8 @@ const useMapControls = () => {
       const svg = mapRef.current.ViewerDOM; // Find svg node
       metroData.metroStationAccess.forEach((station) => {
         const group =
-          svg.querySelector(`[data-name="${station.stationDisplayName}"]`) ||
-          svg.querySelector(
-            `#${station.stationDisplayName.replace(' ', '_').replace(/[^\w-]+/g, '')}`
-          );
+          svg.querySelector(`[data-name="${station.stationName}"]`) ||
+          svg.querySelector(`#${station.stationName.replace(' ', '_').replace(/[^\w-]+/g, '')}`);
         if (group) {
           if (
             (full && station.stepFreeAccess === 'full') ||
@@ -179,13 +172,11 @@ const useMapControls = () => {
     if (mapRef?.current && mapState.mapView) {
       const svg = mapRef.current.ViewerDOM; // Find svg node
       // Find related group in svg map
-      if (station && station.stationDisplayName) {
+      if (station && station.stationName) {
         // Find svg <g> related to station name
         const svgGroup =
-          svg.querySelector(`[data-name="${station.stationDisplayName}"]`) ||
-          svg.querySelector(
-            `#${station.stationDisplayName.replace(' ', '_').replace(/[^\w-]+/g, '')}`
-          ); // regex removes whitespace and non word chars for id search
+          svg.querySelector(`[data-name="${station.stationName}"]`) ||
+          svg.querySelector(`#${station.stationName.replace(' ', '_').replace(/[^\w-]+/g, '')}`); // regex removes whitespace and non word chars for id search
 
         // If group is found remove text background from svg map
         if (svgGroup) {

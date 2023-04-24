@@ -88,7 +88,7 @@ function MapVertical() {
         background="#fff"
         onChangeValue={setValues}
       >
-        <svg>
+        <svg width={mapSize.width} height={mapSize.height}>
           <style>
             {
               '.st0{clip-path:url(#SVGID_00000031925839151982136660000012007475375414382978_);}.st1{fill:#0075C9;}.st2{fill:#FFFFFF;}.st3{fill:#3D1152;}.st4{fill:#DED7D6;}.st5{fill:#221E20;}.st6{fill:#EEEAEA;}.st7{fill:#2D2A26;}.st8{fill:#1D1D1C;}'

@@ -2,12 +2,16 @@
 import 'react-app-polyfill/stable';
 // React
 import React from 'react';
-import ReactDOM from 'react-dom';
+import * as ReactDOMClient from 'react-dom/client';
 import App from './components/App/App';
 
-ReactDOM.render(
+const container = document.getElementById('wmn-find-metro-zones');
+
+// Create a root.
+const root = ReactDOMClient.createRoot(container);
+
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('wmn-app-name')
+  </React.StrictMode>
 );

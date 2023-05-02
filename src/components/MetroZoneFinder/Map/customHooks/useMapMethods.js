@@ -58,7 +58,7 @@ const useMapMethods = () => {
         const parkingIcon = group.querySelector(`.parking-icon`);
         // If the group element exists get its svg coordinates
         const gCoords = group.getBBox();
-        console.log(gCoords);
+
         // Create a new rectangle element
         const p = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
         // Set attributes and positioning on the new rect element using coordinates

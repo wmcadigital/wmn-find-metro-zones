@@ -4,7 +4,7 @@ import PandR from 'components/shared/PandR/PandR';
 import MetroZoneMap from './MetroZoneMap';
 import s from './Map.module.scss';
 
-const Map = () => {
+function Map() {
   const [, mapDispatch] = useContext(MapContext);
   const mapContainer = useRef(null);
 
@@ -22,6 +22,6 @@ const Map = () => {
       <PandR mapView />
     </div>
   );
-};
+}
 
 export default Map;

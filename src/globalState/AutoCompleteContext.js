@@ -1,3 +1,4 @@
+/* eslint-disable react/function-component-definition */
 import React, { useReducer, createContext } from 'react';
 // Import Helper functions
 import {
@@ -142,6 +143,7 @@ export const AutoCompleteProvider = (props) => {
 
   // Pass state and dispatch in context and make accessible to children it wraps
   return (
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AutoCompleteContext.Provider value={[autoCompleteState, autoCompleteDispatch]}>
       {children}
     </AutoCompleteContext.Provider>

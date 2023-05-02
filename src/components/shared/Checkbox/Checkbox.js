@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icon/Icon';
 
-const InputCheckbox = ({ name, children, handleChange, checked, classes }) => {
+function InputCheckbox({ name, children, handleChange, checked, classes }) {
   // Set input to render below
 
   return (
@@ -24,7 +24,7 @@ const InputCheckbox = ({ name, children, handleChange, checked, classes }) => {
       </label>
     </div>
   );
-};
+}
 
 InputCheckbox.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),

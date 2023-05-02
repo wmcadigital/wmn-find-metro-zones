@@ -16,9 +16,6 @@ import useAutoCompleteAPI from '../customHooks/useAutoCompleteAPI';
 function TrainAutoComplete({ id, label, queryId }) {
   const [autoCompleteState, autoCompleteDispatch] = useContext(AutoCompleteContext);
 
-  console.log('autoCompleteState');
-  console.log(autoCompleteState);
-
   const resultsList = useRef(null);
   const debounceInput = useRef(null);
 

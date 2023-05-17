@@ -20,8 +20,8 @@ function AutoComplete() {
   };
 
   const resetSearch = () => {
-    resetMap(selectedStations);
     autoCompleteDispatch({ type: 'RESET_SELECTED_SERVICES' });
+    resetMap(selectedStations);
   };
 
   // Spread ids of selected stations into an array

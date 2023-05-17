@@ -24,7 +24,7 @@ export const AutoCompleteProvider = (props) => {
   additionalQueries = additionalQueries.slice(2).map((value) => value.id);
   additionalStations = additionalStations.slice(2).map((value) => ({ id: value.id }));
   // Set intial state
-  const initialState = {
+  const initialStateUrlParams = {
     ticketMode: getSearchParam('ticketSearch') === 'true',
     queries: [getSearchParam('query0') || '', getSearchParam('query1') || '', ...additionalQueries],
     // // The selected service is used to store details when a user has clicked an autocomplete
@@ -34,6 +34,22 @@ export const AutoCompleteProvider = (props) => {
       },
       {
         id: getSearchParam('selectedStation1') || null,
+      },
+      ...additionalStations,
+    ],
+  };
+
+  const initialState = {
+    ticketMode: getSearchParam('ticketSearch') === 'true',
+    queries: ['', '', ...additionalQueries],
+    test: 'test',
+    // // The selected service is used to store details when a user has clicked an autocomplete
+    selectedStations: [
+      {
+        id: null,
+      },
+      {
+        id: null,
       },
       ...additionalStations,
     ],
@@ -134,7 +150,7 @@ export const AutoCompleteProvider = (props) => {
         };
       // Default should return intial state if error
       default:
-        return initialState;
+        return initialStateUrlParams;
     }
   };
 

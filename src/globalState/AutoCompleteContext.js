@@ -155,7 +155,7 @@ export const AutoCompleteProvider = (props) => {
   };
 
   // Set up reducer using reducer logic and initialState by default
-  const [autoCompleteState, autoCompleteDispatch] = useReducer(reducer, initialState);
+  const [autoCompleteState, autoCompleteDispatch] = useReducer(reducer, initialStateUrlParams);
 
   // Pass state and dispatch in context and make accessible to children it wraps
   return (

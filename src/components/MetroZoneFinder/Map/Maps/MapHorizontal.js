@@ -24,10 +24,10 @@ function MapHorizontal() {
 
   // initial value for the map 1st render
   const initialValue = {
-    SVGHeight: 432,
+    SVGHeight: 473,
     SVGMinX: 0,
     SVGMinY: 0,
-    SVGWidth: 843,
+    SVGWidth: 2889,
     a: 0.09870479872631363,
     b: 0,
     c: 0,
@@ -88,7 +88,7 @@ function MapHorizontal() {
         background="#fff"
         onChangeValue={setValues}
       >
-        <svg width={mapSize.width} height={mapSize.height}>
+        <svg>
           <style>
             {
               '.st0 {clip-path:url(#SVGID_00000046312892275571864610000008328776898878226325_);}.st1{fill:#0075C9;}.st2 {fill: #FFFFFF;}.st3 {fill: #3D1152;}.st4 {fill: #DED7D6;}.st5{fill: #221E20;}.st6{fill: #EEEAEA;}.st7{fill: #2D2A26;}.st8{fill:#1D1D1C;}'

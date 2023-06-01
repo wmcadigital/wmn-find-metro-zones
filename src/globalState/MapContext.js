@@ -13,7 +13,7 @@ export function MapContextProvider(props) {
     mapContainer: null,
     mapView: getSearchParam('mapView') !== 'false',
     mapSize: {
-      width: 843,
+      width: 432,
       height: 432,
     },
     highlightedZones: {

@@ -4,7 +4,7 @@ import { getSearchParam, setSearchParam } from 'globalState/helpers/URLSearchPar
 
 export const MapContext = createContext(); // Create context
 
-export const MapContextProvider = (props) => {
+export function MapContextProvider(props) {
   const { children } = props || {};
 
   // Set intial state
@@ -13,7 +13,7 @@ export const MapContextProvider = (props) => {
     mapContainer: null,
     mapView: getSearchParam('mapView') !== 'false',
     mapSize: {
-      width: 843,
+      width: 432,
       height: 432,
     },
     highlightedZones: {
@@ -100,5 +100,6 @@ export const MapContextProvider = (props) => {
   const [mapState, mapDispatch] = useReducer(reducer, initialState);
 
   // Pass state and dispatch in context and make accessible to children it wraps
+  // eslint-disable-next-line react/jsx-no-constructed-context-values
   return <MapContext.Provider value={[mapState, mapDispatch]}>{children}</MapContext.Provider>;
-};
+}

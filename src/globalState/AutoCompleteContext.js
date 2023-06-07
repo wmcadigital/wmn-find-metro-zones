@@ -1,3 +1,4 @@
+/* eslint-disable react/function-component-definition */
 import React, { useReducer, createContext } from 'react';
 // Import Helper functions
 import {
@@ -23,7 +24,7 @@ export const AutoCompleteProvider = (props) => {
   additionalQueries = additionalQueries.slice(2).map((value) => value.id);
   additionalStations = additionalStations.slice(2).map((value) => ({ id: value.id }));
   // Set intial state
-  const initialState = {
+  const initialStateUrlParams = {
     ticketMode: getSearchParam('ticketSearch') === 'true',
     queries: [getSearchParam('query0') || '', getSearchParam('query1') || '', ...additionalQueries],
     // // The selected service is used to store details when a user has clicked an autocomplete
@@ -33,6 +34,22 @@ export const AutoCompleteProvider = (props) => {
       },
       {
         id: getSearchParam('selectedStation1') || null,
+      },
+      ...additionalStations,
+    ],
+  };
+
+  const initialState = {
+    ticketMode: getSearchParam('ticketSearch') === 'true',
+    queries: ['', '', ...additionalQueries],
+    test: 'test',
+    // // The selected service is used to store details when a user has clicked an autocomplete
+    selectedStations: [
+      {
+        id: null,
+      },
+      {
+        id: null,
       },
       ...additionalStations,
     ],
@@ -133,15 +150,16 @@ export const AutoCompleteProvider = (props) => {
         };
       // Default should return intial state if error
       default:
-        return initialState;
+        return initialStateUrlParams;
     }
   };
 
   // Set up reducer using reducer logic and initialState by default
-  const [autoCompleteState, autoCompleteDispatch] = useReducer(reducer, initialState);
+  const [autoCompleteState, autoCompleteDispatch] = useReducer(reducer, initialStateUrlParams);
 
   // Pass state and dispatch in context and make accessible to children it wraps
   return (
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AutoCompleteContext.Provider value={[autoCompleteState, autoCompleteDispatch]}>
       {children}
     </AutoCompleteContext.Provider>

@@ -4,7 +4,7 @@ import Map from '../Map/Map';
 import AutoComplete from '../../shared/AutoComplete/AutoComplete';
 import s from './MapView.module.scss';
 
-const MapView = () => {
+function MapView() {
   return (
     <div className={s.mapViewSection}>
       <div className={`${s.container} wmnds-grid wmnds-grid--spacing-md-2-lg`}>
@@ -19,6 +19,6 @@ const MapView = () => {
       </div>
     </div>
   );
-};
+}
 
 export default MapView;

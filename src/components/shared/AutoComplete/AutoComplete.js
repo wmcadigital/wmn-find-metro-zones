@@ -10,7 +10,7 @@ import s from './AutoComplete.module.scss';
 // Import custom hook
 import useMapControls from '../../MetroZoneFinder/Map/customHooks/useMapControls';
 
-const AutoComplete = () => {
+function AutoComplete() {
   const [autoCompleteState, autoCompleteDispatch] = useContext(AutoCompleteContext);
   const { selectedStations } = autoCompleteState;
   const { resetMap } = useMapControls();
@@ -20,8 +20,8 @@ const AutoComplete = () => {
   };
 
   const resetSearch = () => {
-    resetMap(selectedStations);
     autoCompleteDispatch({ type: 'RESET_SELECTED_SERVICES' });
+    resetMap(selectedStations);
   };
 
   // Spread ids of selected stations into an array
@@ -78,7 +78,7 @@ const AutoComplete = () => {
       <Result />
       {continueBtn && (
         <a
-          href={`https://find-a-ticket.wmnetwork.co.uk/${linkParams}`}
+          href={`https://find-a-ticket.tfwm.org.uk/${linkParams}`}
           className="wmnds-btn wmnds-btn--icon wmnds-col-1 wmnds-col-sm-auto"
         >
           Continue
@@ -90,6 +90,6 @@ const AutoComplete = () => {
       )}
     </>
   );
-};
+}
 
 export default AutoComplete;

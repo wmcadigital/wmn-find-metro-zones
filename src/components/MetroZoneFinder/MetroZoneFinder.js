@@ -1,24 +1,17 @@
 import React, { useContext } from 'react';
-import { MapContext, AutoCompleteContext } from 'globalState';
+import { AutoCompleteContext } from 'globalState';
 // Rail zone svg component
-import Button from '../shared/Button/Button';
+// import Button from '../shared/Button/Button';
 import Icon from '../shared/Icon/Icon';
 import Breadcrumbs from '../shared/Breadcrumbs/Breadcrumbs';
-import MapView from './MapView/MapView';
+// import MapView from './MapView/MapView';
 import ListView from './ListView/ListView';
 import s from './MetroZoneFinder.module.scss';
 
 function MetroZoneFinder() {
   const [autoCompleteState] = useContext(AutoCompleteContext);
-  const [mapState, mapDispatch] = useContext(MapContext);
-  const { mapView } = mapState;
-  // Toggle between map and list view
-  const setMapView = () => {
-    mapDispatch({
-      type: 'UPDATE_VIEW',
-      payload: !mapView,
-    });
-  };
+  // const [mapState, mapDispatch] = useContext(MapContext);
+  // const { mapView } = mapState;
 
   return (
     <>
@@ -39,14 +32,6 @@ function MetroZoneFinder() {
           <div className="wmnds-col-auto">
             <h1>Find my Metro zones</h1>
           </div>
-          <div className="wmnds-col-auto">
-            <Button
-              text={mapView ? 'List view' : 'Map view'}
-              btnClass="wmnds-btn--secondary"
-              iconRight={mapView ? 'general-list' : 'general-location-pin'}
-              onClick={() => setMapView(!mapView)}
-            />
-          </div>
         </div>
         <div className="wmnds-grid">
           <div className="wmnds-col-md-3-4">
@@ -56,7 +41,7 @@ function MetroZoneFinder() {
           </div>
         </div>
       </div>
-      {mapState.mapView ? <MapView /> : <ListView />}
+      <ListView />
     </>
   );
 }

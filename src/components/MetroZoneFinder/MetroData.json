@@ -277,6 +277,22 @@
       "metroZone": 4,
       "parking": false,
       "stepFreeAccess": "full"
+    },
+     {
+      "crsCode": "PSR",
+      "stationName": "Pipers Row",
+      "stationDisplayName": "Pipers Row",
+      "metroZone": 4,
+      "parking": false,
+      "stepFreeAccess": "full"
+    },
+     {
+      "crsCode": "WSN",
+      "stationName": "Wolverhampton Station",
+      "stationDisplayName": "Wolverhampton Station",
+      "metroZone": 4,
+      "parking": false,
+      "stepFreeAccess": "full"
     }
   ]
 }
